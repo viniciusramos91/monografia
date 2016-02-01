@@ -346,7 +346,7 @@ Dessa forma, para possibilitar a troca de mensagens entre a aplicação \textit{
 \begin{itemize}
 	\item \textbf{Ações:} Definem o comando à ser executado pelo núcleo, enviando-lhe uma requisição, à fim de se obter uma resposta com os dados requeridos;
 	\item \textbf{Requisições:} De acordo com \cite{rest}, toda requisição feita à um servidor deve conter todo o conjunto de informações necessárias para sua completude, pois a comunicação não deve manter estado (\textit{stateless}). Assim, foram desenvolvidas requisições que contivéssem todos os dados necessários para a execução daquela Ação requisitada pela aplicação \textit{web};
-	\item \textbf{Respostas:}
+	\item \textbf{Respostas:} Define a resposta dada pelo núcleo do BioNimbuZ para uma dada ação. É verificada o código \textit{HTTP} de resposta (\textit{status code}), esperando-se, geralmente, o código \texttt{HTTP 200}, que indica sucesso na requisição. Outros código são comuns, tais como o código \texttt{HTTP 500}, sinalizando erro interno do servidor e \texttt{HTTP 400}, que significa que uma requisição foi mal montada (\textit{Bad Request}).
 \end{itemize}
 
 
