@@ -1,0 +1,54 @@
+A busca por cada vez mais poder de processamento tem desenvolvido novos estudos e paradigmas na Computação. \textit{Grids} computacionais, \textit{clusters} e, mais atualmente, nuvens computacionais tem tentado suprir essa necessidade de maneiras distintas. Em 1969, Leonard Kleinrock, um dos cientistas que chefiou o projeto ARPANET (o qual se tornou a base da Internet) disse que a computação funcionaria a partir de um modelo como é visto atualmente na telefonia e na eletricidade, um serviço. Neste modelo, usuários acessam esses serviços independentemente de onde os mesmos estão localizados ou de qual maneira são entregues, abstraindo diversas características do ambiente envolvido. Esse modelo se aproxima do conceito de Computação em Nuvem.
+
+Entretanto, não existe na literatura consenso para a definição de computação em nuvem, porém algumas características fundamentais [2] estão presentes na maioria delas, como virtualização, escalabilidade, interoperabilidade, qualidade de serviço (QoS), gerenciamento de falhas, transparência, elasticidade. Esses aspectos fundamentais constituem o modelo de nuvens computacionais como serviços, em que o sistema passa a ilusão ao usuário de que este possui acesso à recursos ilimitados de software e hardware. Nesse contexto, surgiram os tipos de nuvens, os quais são a nuvem privada, pública, híbrida, comunitárias e, mais atualmente, a federação de nuvens [16]. 
+
+O mais novo destes tipos, a Federação de Nuvens, compreende o uso de diversos provedores em um único serviço. Isso provê características adicionais aos modelos anteriores de nuvem pública, privada e híbrida, tais como migração de recursos (como imagens de máquinas virtuais), redundância de dados, processamento paralelo, replicação de recursos, combinação de serviços complementares, fragmentação de dados (por exemplo, itens do tipo 1 são armazenados no provedor A enquanto itens do tipo 2 são armazenados no provedor B. Isso se torna útil quando requisitos funcionais e não funcionais diferem para tipos de dados diferentes). Adicionalmente, uma federação de nuvens possibilita o desenvolvimento de sistemas flexíveis e interoperáveis, o que diminui os custos de desenvolvimento e facilita sua expansão, com o custo de se adicionar complexidade ao sistema.
+
+Neste cenário, a Bioinformática tem se beneficiado com esse conceito de nuvens computacionais pela sua característica de tratar grandes quantidades de dados, produzidas pelas modernas máquinas que executam algoritmos de sequenciamento genômico. Dessa forma, diversas ferramentas foram projetadas e implantadas tirando proveito dos recursos disponibilizados pela computação em nuvens. O BioNimbuZ, projeto desenvolvido por Hugo Saldanha [3], faz uso da infraestrutura de uma federação de nuvens para executar \textit{workflows} em Bioinformática de maneira transparente, flexível, eficiente e tolerante à falhas, com acesso à grande poder de processamento e armazenamento.
+
+Na Bioinformática, um \textit{workflow} é um conjunto de diversas fases em que análises computacionais são executadas a partir de dados obtidos por meio de sequenciadores automáticos. Cada pesquisa implica em uma combinação de diferentes ferramentas já existentes ou a serem desenvolvidas, o que adiciona complexidade ao sistema, pois torna-o mutável a cada nova pesquisa. Sistemas científicos que gerenciam \textit{workflow} [4] devem automatizar a execução de \textit{workflows} científicos, suportando usuários na montagem, composição e verificação da execução do workflow gerado pelo usuário.
+
+Este trabalho propõe um sistema gerenciador de \textit{workflows} científicos que trata o problema de manutenção dos \textit{workflows} submetidos ao ambiente de nuvem federada BioNimbuZ, além de implementar uma interface baseada em tecnologias \textit{web} para que os usuários possam acessar os serviços disponibilizados pelo BioNimbuZ através da Internet.
+
+\section{Motivação} \label{cap1sec1}
+
+Com o número crescente de sistemas computacionais utilizados na Bioinformática para execução de \textit{workflows} científicos, percebeu-se a necessidade de criação de sistemas que gerenciem o ciclo de vida destes \textit{workflows}. Este ciclo de vida é composto por diversas fases, tais como [4] Criação e Composição, Planejamento de Recursos, Execução, Análise da Execução, Compartilhamento de Resultados. 
+
+Diante desse contexto, este trabalho trata da criação de um sistema de gerenciamento de \textit{workflows} científicos para o ambiente de nuvem federada BioNimbuZ para que seja possível a criação, a manutenção e a execução dos \textit{workflows} submetidos à esta plataforma, tal como trata do problema de comunicação entre este sistema e o núcleo do BioNimbuZ.
+
+\section{Problema} \label{cap1sec2}
+
+Atualmente, 
+não existe a concepção de \textit {workflow}, ou fluxo de trabalho, na plataforma BioNimbuZ dado que a execução de uma sequência de passos é realizada de maneira sequencial, isto é, o usuário deve escolher o software computacional, indicar suas entradas e saídas, repetindo esse processo até a completude do fluxo desejado. Dessa forma, não há suporte à criação e gerenciamento de \textit{workflows}, pois o usuário intervém em todos os passos deste fluxo. 
+	
+\section{Objetivo} \label{cap1sec3}
+
+\subsection{Principal} \label{cap1sec3subsec1}
+
+Propor e implementar um Sistema Gerenciador de \textit{Workflows} Científicos acessível pela Internet, para que o usuário possa: compor um \textit{workflow} de maneira gráfica, enviar arquivos necessários à sua execução, enviá-lo ao núcleo BioNimbuZ para ser executado, salvar seu estado para que o usuário tenha acesso posterior ao término da execução e, por fim, permitir que o usuário visualize o resultado para realizar pós-análise.
+
+\subsection{Específicos} \label{cap1sec3subsec2}
+
+Para propor e implementar um Sistema Gerenciador de \textit{Workflows} Científicos e cumprir o objetivo principal definido na Seção \ref{cap1sec3subsec1}, este trabalho tem os seguintes objetivos específicos:
+
+\begin{itemize}
+	\item Desenvolver uma aplicação \textit{web} utilizando a linguagem de programação Java para permitir que usuários possam acessar os recuros disponíveis pela plataforma BioNimbuZ;
+	\item Desenvolver uma camada de comunicação utilizando \textit{webservices REST} (\textit{Representational State Transfer}) para transferir arquivos, recuperar dados, solicitar a execução de \textit{workflows}, entre outras funcionalidades para o núcleo do BioNimbuZ;
+    \item Desenvolver mecanismos que possibilitem aos usuários do sistema desenhar, compor, iniciar a execução e verificar os resultados obtidos a partir da execução desse \textit{workflow};
+    \item Utilizar Bancos de Dados \textit{MySQL} para prover a persistência dos dados enviados ao BioNimbuZ.
+\end{itemize}
+
+\section{Organização do Trabalho} \label{cap1sec4}
+
+Este trabalho foi dividido em mais 6 capítulos assim distribuídos: no \refCap{capitulo2} são apresentados os conceitos básicos para compreensão do contexto atual da Computação em Nuvem, como a concepção de Sistemas Distribuídos, \textit{Clusters} e \textit{Grids} computacionais. Além disso, expõe algumas tecnologias utilizadas em nuvens computacionais e detalha os principais aspectos da Federação de Nuvens. 
+
+No \refCap{capitulo3} será abordado o conceito de \textit{workflows} científicos, suas características e ciclo de vida. Também serão apresentados exemplos de Sistemas Gerenciadores de \textit{Workflows} Científicos que nortearam o desenvolvimento do presente trabalho. 
+
+O \refCap{capitulo4} detalha a plataforma de nuvens federadas BioNimbuZ, retratando sua arquitetura anterior ao desenvolvimento deste trabalho. Também serão descritos tecnologias utilizadas em sua construção e que otimizaram pontos como tolerância à falhas e comunicação entre componentes de sua arquitetura.
+
+O \refCap{capitulo5} apresenta o Sistema Gerenciador de \textit{Workflows} Científicos proposto neste trabalho, com uma nova proposta de arquitetura para o BioNimbuZ. Nele serão retratados detalhes de sua implementação, a escolha das tecnologias utilizadas, bem como compara a antiga maneira de se acessar os serviços providos pelo BioNimbuZ com o novo método, baseado em tecnologias \textit{web}.
+
+No \refCap{capitulo6} são mostrados os resultados obtidos com o desenvolvimento do Sistema Gerenciador de \textit{Workflows} Científicos para o BioNimbuZ. E por fim, no \refCap{capitulo7} são apresentadas as conclusões obtidas e demais trabalhos futuros, que podem melhorar e otimizar o proposto no presente trabalho.
+
+
+

@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+
+\bibitem{html_rfc}
+Especificação html.
+\newblock \url{https://tools.ietf.org/html/rfc2616}.
+\newblock Acessado online em 31 de janeiro de 2016.
+
+\bibitem{primefaces_url}
+Primefaces.
+\newblock \url{http://www.primefaces.org}.
+\newblock Acessado online em 31 de janeiro de 2016.
+
+\bibitem{ptolemy}
+Christopher Brooks, Edward~A. Lee, Xiaojun Liu, Stephen Neuendorffer, Yang
+  Zhao, e Haiyang Zheng.
+\newblock Heterogeneous concurrent modeling and design in java (volume 2:
+  Ptolemy ii software architecture).
+\newblock Technical Report UCB/EECS-2008-29, EECS Department, University of
+  California, Berkeley, Apr 2008.
+
+\bibitem{can_one_size_fit_all}
+V.~Curcin e M.~Ghanem.
+\newblock {Scientific workflow systems - can one size fit all?}
+\newblock In {\em Biomedical Engineering Conference, 2008. CIBEC 2008. Cairo
+  International}, pages 1--9, 2008.
+
+\bibitem{triana_screen}
+Research Studio Digital~Memory Engineering.
+\newblock Research studio digital memory engineering.
+\newblock \url{http://www.rs-dme.at/}.
+\newblock Acessado online em 29 de janeiro de 2016.
+
+\bibitem{cloud_360}
+I.~Foster, Yong Zhao, I.~Raicu, e Shiyong Lu.
+\newblock Cloud computing and grid computing 360-degree compared.
+\newblock In {\em Grid Computing Environments Workshop, 2008. GCE '08}, pages
+  1--10, Nov 2008.
+
+\bibitem{problem_solving}
+E.~Gallopoulos, E.~Houstis, e J.R. Rice.
+\newblock Computer as thinker/doer: problem-solving environments for
+  computational science.
+\newblock {\em Computational Science Engineering, IEEE}, 1(2):11--23, Summer
+  1994.
+
+\bibitem{kepler_screen}
+Kepler.
+\newblock Exemplo de interface gráfica do sistema kepler.
+\newblock
+  \url{http://www.cell.com/cms/attachment/2002983292/2011324825/gr2.jpg}.
+\newblock Acessado online em 30 de janeiro de 2016.
+
+\bibitem{kepler_system}
+Bertram Lud\"{a}scher, Ilkay Altintas, Chad Berkley, Dan Higgins, Efrat Jaeger,
+  Matthew Jones, Edward~A. Lee, Jing Tao, e Yang Zhao.
+\newblock {Scientific workflow management and the Kepler system}.
+\newblock {\em Concurrency Computat.: Pract. Exper.}, 18(10):1039--1065, August
+  2006.
+
+\bibitem{triana_1}
+S.~Majithia, M.~Shields, I.~Taylor, e I.~Wang.
+\newblock Triana: a graphical web service composition and execution toolkit.
+\newblock In {\em Web Services, 2004. Proceedings. IEEE International
+  Conference on}, pages 514--521, July 2004.
+
+\bibitem{sun_url}
+Oracle.
+\newblock Sun microsystems.
+\newblock \url{https://www.oracle.com/sun/index.html}.
+\newblock Acessado online em 31 de janeiro de 2016.
+
+\bibitem{taverna_screen}
+Taverna.
+\newblock Taverna online.
+\newblock \url{http://onlinehpc.com/}.
+\newblock Acessado online em 30 de janeiro de 2016.
+
+\end{thebibliography}

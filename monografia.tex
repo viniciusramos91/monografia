@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		  Classe do documento          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[engenharia]{UnB-CIC}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%			   Includes				   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pdfpages} % incluir PDFs, usado no apêndice
+\usepackage{float}
+\usepackage[brazil,american]{babel}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{array}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Cores dos links   	   	   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Veja o arquivos cores.tex se quiser ver que outras cores estão
+% pré-definidas.  Utilizando o comando \hypersetup abaixo nós
+% evitamos aquelas caixas vermelhas feias em volta dos links.
+
+\input{cores}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=SkyBlue,
+  citecolor=SkyBlue,
+  filecolor=SkyBlue,
+  urlcolor= SkyBlue
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	    Informações do Trabalho		   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\orientador[a]{\prof[a] \dr[a] Aletéia Patrício Favacho de Araújo}{CIC/UnB}%
+
+\coordenador{\prof \dr Andre Drummond}{CIC/UnB}%
+\diamesano{12}{fevereiro}{2016}%
+
+\membrobanca{\prof \drª Maria Emília Machado Telles Walter}{CIC/UnB}
+\membrobanca{\prof \drª Genaina Nunes Rodrigues}{CIC/UnB}
+
+\autor{Vinicius de A.}{Ramos}%
+
+\titulo{Um Sistema Gerenciador de Workflows Científicos Para a Plataforma de Nuvens Federadas BioNimbuZ}%
+
+\palavraschave{Computação em Nuvem, \textit{Workflow} Científico, Sistema Gerenciador de \textit{Workflows} Científicos, Tecnologias \textit{web}}%
+\keywords{Cloud Computing, Scientific Workflow, Scientific Workflow Management System, web technologies}%
+
+\CDU{004.4}%
+
+\newcommand{\unbcic}{\texttt{UnB-CIC}}%
+\newcommand{\code}[1]{{\color[HTML]{7e0854} \texttt{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				 Texto				   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%
+    \capitulo{capitulo1}{Introdução} 
+    \capitulo{capitulo2}{Computação em Nuvem}%
+    \capitulo{capitulo3}{Workflow Científico}%
+    \capitulo{capitulo4}{BioNimbuZ}%
+    \capitulo{capitulo5}{Sistema Gerenciador de Workflows Científicos para o BioNimbuZ}
+    \capitulo{capitulo6}{Resultados Obtidos}
+    \capitulo{capitulo7}{Conclusões e Trabalhos Futuros}
+    
+%%%%%%%%%%%%%%%%%%%%
+% Medida Paleativa %
+%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{center}
+   	\textbf{\large{Referência Bibliográfica}} \\
+    \textit{Temporário}
+\end{center}  
+
+\begin{itemize}
+    \item [1] Cloud Computing and Grid Computing 360-Degree Compared
+	\item [2] A Taxonomy and Survey of Cloud Computing Systems
+	\item [3] BioNimbus: uma arquitetura de federação de nuvens computacionais híbrida para a execução de workflows de Bioinformática
+	\item [4] Scientific Process Automation and Workflow Management
+	\item [5] A Break In The Clouds: Towards a Cloud Definition
+	\item [6] Distributed Systems and Recent Innovations: Challenges and Benefits
+	\item [9] Consistent Global States of Distributed Systems: Fundamental Concepts and Mechanisms
+	\item [10] Time, Clocks and the Ordering of Events in a Distributed Systems.
+	\item [11] Cloud Computing vs. Grid Computing 
+	\item [12] The Anatomy of The Grid
+	\item [13] Cluster Computing - High Performance, High-Availability and High Throuhput Processing on a Network of Computers
+	\item [14] Cluster Computing: Architectures, Operating Systems, Parallel Processing and Programming Languages
+	\item [15] Cloud Computing - State of the Art and Research Challenges
+	\item [16] The NIST Definition of Cloud Computing
+    \item [17] Xen Project, http://www.xenproject.org/ (acessado em 11/01/2016)
+    \item [18] KVM, http://www.linux-kvm.org/page/Main\_Page (acessado em 11/01/2016)
+    \item [19] VMWare, http://www.vmware.com/br (acessado em 11/01/2016)
+    \item [20] How to Enhance Cloud Architectures to Enable Cross-Federation
+    \item [21] Provenance Collection Support in the Kepler Scientific Workflow System
+    \item [22] http://www.csc.ncsu.edu/faculty/mpsingh/papers/databases/workflows/sciworkflows.html (acessado em 12/01/2016)	
+    \item [23] Towards a Model of Provenance and User Views in Scientific Workflows	
+    \item [24] Scientific Workflow Management and the KEPLER System	
+    \item [25] WOODSS — a spatial decision support system based on workflows	
+    \item [26] E. White, L. McMillan, P. Romanski, M. O'Gara, and J. Bloomberg. Inter-cloud peering points. http://cloudcomputing.sys-con.com/node/1658700, 2010. vii, 13
+    \item [27] Dropbox http://www.dropbox.com/
+    \item [28] Amazon EC2 https://aws.amazon.com/pt/ec2/
+    \item [29] Heroku https://www.heroku.com/
+    \item [30] Scientific Process Automation and Workflow Management
+    \item [31] Scientific Workflows - Business as Usual?
+    \item [32] JSF https://javaserverfaces.java.net/
+    \item [33] Primefaces http://www.primefaces.org/
+    \item [34] M. Ghanem, V. Curcin, P. Wendel, and Y. Guo, “Building and using analytical workflows in discovery net,” in Data mining on the Grid, W. Dubitzky, Ed. John Wiley and Sons, 2008.
+    \item [35] D. Hull, K. Wolstencroft, R. Stevens, C. Goble, M. R. Pocock, P. Li,and T. Oinn, “Taverna: A tool for building and running workflows of services,” Nucleic Acids Research, vol. 34, pp. W729–W732, 2006, web Server Issue.
+	\item [36] I. Taylor, M. Shields, I. Wang, and A. Harrison, “Visual Grid Workflow in Triana”, Journal of Grid Computing, vol. 3, no. 3-4, pp. 153–169, September 2005. [Online]. Available:
+\begin{verbatim}
+\http://www.springerlink.com/openurl.asp?genre=article&issn=1570- 
+7873&volume=3&issue=3&spage=153
+\end{verbatim}
+    \item [37] B. Ludascher, I. Altintas, C. Berkley, D. Higgins, E. Jaeger, M. Jones, E. A. Lee, J. Tao, and Y. Zhao, “Scientific workflow management and the kepler system: Research articles,” Concurr. Comput. : Pract. Exper., vol. 18, no. 10, pp. 1039–1065, 2006.
+    \item [38] Pegasus Mapping Scientific Workflows onto the Grid 
+	\item [39] The Pegasus Portal Web Based Grid Computing
+    \item [40] Use a Cabeça! Padrões de Projeto
+    \item [41] Spring MVC https://spring.io (acessado em 18/01)
+    \item [42] Struts https://struts.apache.org (acessado em 18/01)
+    \item [43] Play https://www.playframework.com
+	\item [44] IDBS https://www.idbs.com/en/ (acessado em 19/01)
+	\item [45] Google www.google.com.br
+    \item [46] Amazon www.amazon.com
+    \item [47] Microsoft www.microsoft.com
+    \item [48] Google Compute Engine https://cloud.google.com/compute/
+    \item [49] GoGrid https://www.datapipe.com/gogrid/
+    \item [50] CloudForge http://www.cloudforge.com
+    \item [51] AppScale http://www.appscale.com
+    \item [52] Abiquo http://www.abiquo.com
+    \item [53] SalesForce http://www.salesforce.com/br/
+    \item [54] Zendesk https://www.zendesk.com.br    
+	\item [55] Breno Rodrigues Moura and Deric Lima Bacelar. Política para armazenamento de arquivos no zoonimbus, 2013. Monografia de graduação, Departamento de Ciência de Computação, Universidade de Brasília. 20, 21, 25
+	\item [56] Gabriel Silva Souza de Oliveira. Acosched: um escalonador para o ambiente de nuvem federada zoonimbus, 2013. Monografia de graduação, Departamento de Ciência de Computação, Universidade de Brasília. 20, 21, 24
+	\item [57] Ion Stoica, Robert Morris, David Liben-Nowell, David Karger, Frans Kaashoek, Frank Dabek, and Hari Balakrishnan. Chord: a scalable peer-to-peer lookup protocol for internet applications. Networking, IEEE/ACM Transactions on, 11(1):17–32, 2003. 20
+	\item [58] Raj Srinivasan. RPC: Remote Procedure Call protocol Specification version 2 , Request For Coments (RFC 1831). http://tools.ietf.org/pdf/rfc1831.pdf, 1995. Acessado online em 27 de janeiro de 2016.
+	\item [59] The Apache Software Fundation. Apache zookeeper. http://zookeeper.apache.org/, 2015. Acessado online em 15 de janeiro de 2016. vii, 21, 22
+	\item [60] The Apache Software Fundation. Apache fundation. http://apache.org/, 2015. Acessado online em 15 de janeiro de 2016. 21
+	\item [61] The Apache Software Fundation. Apache Avro. http://avro.apache.org/, 2012. Acessado online em 15 de janeiro de 2016
+	\item [62] Douglas Crockford. The application/json Media Type for Javascript Object Notation (JSON) , Request For Coments (RFC 4627). http://tools.ietf.org/pdf/rfc4627.pdf, 1995. Acessado online em 05 de junho de 2015. 21
+	\item [63] Roy Fielding, Jim Gettys, Jeffrey Mogul, Henrik Frystyk, Larry Masinter, Paul Leach, and Tim Berners-Lee. Hypertext Transfer Protocol–http/1.1 , Request For Coments (RFC 2616). http://tools.ietf.org/pdf/rfc2616.pdf, 1999. Acessado online em 05 de junho de 2015. 21
+	\item [64] The Apache Software Fundation. Apache avro documentation. http://avro.apache.org/docs/1.7.7/, 2015. Acessado online em 05 de junho de 2015. 21
+    \item [65] Thrift https://thrift.apache.org
+    \item [66] Protocol Buffer https://developers.google.com/protocol-buffers/
+\end{itemize}
+
+%    \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%    
+%    \anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
+\end{document}%
