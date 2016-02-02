@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.17)  1 FEB 2016 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.17)  2 FEB 2016 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,7 +970,7 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <20> not available
 LaTeX Font Warning: Font shape `T1/ua1/bx/n' in size <20> not available
 (Font)              size <20.74> substituted on input line 59.
 
-<img/positivo_cor.pdf, id=192, 119.44624pt x 60.225pt>
+<img/positivo_cor.pdf, id=205, 119.44624pt x 60.225pt>
 File: img/positivo_cor.pdf Graphic file (type pdf)
 
 <use img/positivo_cor.pdf>
@@ -1085,7 +1085,12 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 59.
 
-[11] (./monografia.lot)
+[11] (./monografia.lot
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
 \tf@lot=\write9
 \openout9 = `monografia.lot'.
 
@@ -1168,7 +1173,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 35.
  [6]
-<img/arquitetura_cluster.pdf, id=420, 1077.02374pt x 656.4525pt>
+<img/arquitetura_cluster.pdf, id=446, 1077.02374pt x 656.4525pt>
 File: img/arquitetura_cluster.pdf Graphic file (type pdf)
 
 <use img/arquitetura_cluster.pdf>
@@ -1192,7 +1197,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 68.
  [8]
-<img/arquitetura_grid.png, id=444, 593.21625pt x 563.10374pt>
+<img/arquitetura_grid.png, id=470, 593.21625pt x 563.10374pt>
 File: img/arquitetura_grid.png Graphic file (type png)
 
 <use img/arquitetura_grid.png>
@@ -1233,7 +1238,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
 
-<img/arquitetura_nuvem.png, id=469, 811.03pt x 662.475pt>
+<img/arquitetura_nuvem.png, id=495, 811.03pt x 662.475pt>
 File: img/arquitetura_nuvem.png Graphic file (type png)
 
 <use img/arquitetura_nuvem.png>
@@ -1263,7 +1268,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 160.
  [15]
-<img/fases_federacao.png, id=485, 1519.6775pt x 633.36626pt>
+<img/fases_federacao.png, id=511, 1519.6775pt x 633.36626pt>
 File: img/fases_federacao.png Graphic file (type png)
 
 <use img/fases_federacao.png>
@@ -1310,7 +1315,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 18.
  [19]
-<img/ciclo_vida_workflow.pdf, id=512, 1701.35625pt x 714.67pt>
+<img/ciclo_vida_workflow.pdf, id=538, 1701.35625pt x 714.67pt>
 File: img/ciclo_vida_workflow.pdf Graphic file (type pdf)
 
 <use img/ciclo_vida_workflow.pdf>
@@ -1357,7 +1362,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
-<img/arquitetura_discoverynet.pdf, id=538, 880.33391pt x 764.89665pt>
+<img/arquitetura_discoverynet.pdf, id=564, 880.33391pt x 764.89665pt>
 File: img/arquitetura_discoverynet.pdf Graphic file (type pdf)
 
 <use img/arquitetura_discoverynet.pdf>
@@ -1393,7 +1398,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<img/tela_taverna_online.png, id=563, 1686.3pt x 944.52875pt>
+<img/tela_taverna_online.png, id=589, 1686.3pt x 944.52875pt>
 File: img/tela_taverna_online.png Graphic file (type png)
 
 <use img/tela_taverna_online.png>
@@ -1415,7 +1420,7 @@ Package babel Info: Redefining portuges shorthand "|
                                                   \fi \fi 
 l.95 
       <./img/tela_taverna_online.png>]
-<img/tela_triana.png, id=575, 1084.05pt x 742.775pt>
+<img/tela_triana.png, id=601, 1084.05pt x 742.775pt>
 File: img/tela_triana.png Graphic file (type png)
  <use img/tela_triana.png>
 Package pdftex.def Info: img/tela_triana.png used on input line 100.
@@ -1442,7 +1447,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
  []
 
-<img/actor_director.pdf, id=588, 650.46315pt x 422.60083pt>
+<img/actor_director.pdf, id=614, 650.46315pt x 422.60083pt>
 File: img/actor_director.pdf Graphic file (type pdf)
 
 <use img/actor_director.pdf>
@@ -1459,7 +1464,7 @@ Package babel Info: Redefining portuges shorthand "|
                                                   \fi \fi 
 l.125 
        <./img/actor_director.pdf>]
-<img/tela_kepler.png, id=609, 791.95876pt x 468.75125pt>
+<img/tela_kepler.png, id=636, 791.95876pt x 468.75125pt>
 File: img/tela_kepler.png Graphic file (type png)
 
 <use img/tela_kepler.png>
@@ -1522,7 +1527,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 42.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 42.
- [33] <img/servico_zookeeper.png, id=643, 917.4275pt x 657.45625pt>
+ [33] <img/servico_zookeeper.png, id=669, 917.4275pt x 657.45625pt>
 File: img/servico_zookeeper.png Graphic file (type png)
 
 <use img/servico_zookeeper.png>
@@ -1539,7 +1544,7 @@ Package babel Info: Redefining portuges shorthand "|
                                                   \fi \fi 
 l.56 
       <./img/servico_zookeeper.png>]
-<img/estrutura_zookeeper.png, id=650, 1214.5375pt x 602.25pt>
+<img/estrutura_zookeeper.png, id=676, 1214.5375pt x 602.25pt>
 File: img/estrutura_zookeeper.png Graphic file (type png)
 
 <use img/estrutura_zookeeper.png>
@@ -1560,7 +1565,7 @@ img/estrutura_zookeeper.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 83.
 
-<img/antiga_arquitetura.pdf, id=659, 1240.635pt x 1125.20375pt>
+<img/antiga_arquitetura.pdf, id=685, 1240.635pt x 1125.20375pt>
 File: img/antiga_arquitetura.pdf Graphic file (type pdf)
 
 <use img/antiga_arquitetura.pdf>
@@ -1724,7 +1729,7 @@ Package babel Info: Redefining portuges shorthand "|
  [43
 
 ]
-<img/terminal_bionimbuz.png, id=717, 918.43124pt x 487.8225pt>
+<img/terminal_bionimbuz.png, id=744, 918.43124pt x 487.8225pt>
 File: img/terminal_bionimbuz.png Graphic file (type png)
 
 <use img/terminal_bionimbuz.png>
@@ -1752,7 +1757,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 44.
 
-<img/nova_arquitetura.jpg, id=731, 1388.18625pt x 2255.42625pt>
+<img/nova_arquitetura.jpg, id=758, 1388.18625pt x 2255.42625pt>
 File: img/nova_arquitetura.jpg Graphic file (type jpg)
 
 <use img/nova_arquitetura.jpg>
@@ -1783,10 +1788,10 @@ LaTeX Warning: Citation `design_patterns' on page 48 undefined on input line 74
 .
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 83.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 83.
-[48] <img/padrao_mvc.png, id=748, 1272.755pt x 679.53876pt>
+(babel)             in language  on input line 80.
+[48] <img/padrao_mvc.png, id=772, 1272.755pt x 679.53876pt>
 File: img/padrao_mvc.png Graphic file (type png)
 
 <use img/padrao_mvc.png>
@@ -1795,79 +1800,126 @@ Package pdftex.def Info: img/padrao_mvc.png used on input line 86.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 107.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 109.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 112.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 112.
+(babel)             in language  on input line 110.
  [49pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 
+l.110 
        <./img/padrao_mvc.png>]
 
-LaTeX Warning: Reference `cap5sec3subsec2' on page 50 undefined on input line 1
-15.
+LaTeX Warning: Citation `mysql_url' on page 50 undefined on input line 113.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 117.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 146.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 146.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 118.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 179.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 153.
- [50pdfTeX warning (ext4): destination with the same identifier (name{table.5.1
+(babel)             in language  on input line 179.
+[50pdfTeX warning (ext4): destination with the same identifier (name{table.5.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.179 	\end{table}
+                  ]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 238.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 238.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{table.5.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 	\item \textbf
-                    {\texttt{SignUpBean}:} Controla o fluxo do sistema quand...
-]
+l.238 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.5
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.238 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.5
+.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.238 
+      ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 168.
+(babel)             in language  on input line 239.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 168.
- [51]
+(babel)             in language  on input line 281.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 174.
+(babel)             in language  on input line 284.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 186.
+(babel)             in language  on input line 284.
+ [52pdfTeX warning (ext4): destination with the same identifier (name{table.5.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.284 
+      ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 186.
- [52]
-Overfull \hbox (4.79698pt too wide) in paragraph at lines 201--202
-[]\T1/lmr/m/n/12 A par-tir des-tas clas-ses, fo-ram de-sen-vol-vi-das as im-ple
--men-ta-ções das \T1/lmtt/m/n/12 interfaces Action\T1/lmr/m/n/12 ,
- []
+(babel)             in language  on input line 321.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 321.
+ [53pdfTeX warning (ext4): destination with the same identifier (name{table.5.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.321 	\end{enumerate}
+                      ]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 336.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 341.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 341.
+ [54]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 383.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 386.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 386.
+ [55pdfTeX warning (ext4): destination with the same identifier (name{table.5.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.386 
+      ]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 398.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 400.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 405.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 405.
+ [56]
+
+LaTeX Warning: Citation `hibernate_url' on page 57 undefined on input line 406.
+
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 234.
+(babel)             in language  on input line 412.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 234.
-[53]
+(babel)             in language  on input line 415.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 418.
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 65.
- [54pdfTeX warning (ext4): destination with the same identifier (name{table.5.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.65     \capitulo{capitulo6}{Resultados Obtidos}
-                                                 ]
+ [57]
 Cap\'{\i }tulo 6.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 65.
@@ -1881,7 +1933,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-<img/tela_login.png, id=806, 1686.3pt x 942.52126pt>
+<img/tela_login.png, id=855, 1686.3pt x 942.52126pt>
 File: img/tela_login.png Graphic file (type png)
  <use img/tela_login.png>
 Package pdftex.def Info: img/tela_login.png used on input line 11.
@@ -1895,7 +1947,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 19.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 19.
-[55
+[58
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
 has been already used, duplicate ignored
@@ -1904,7 +1956,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.19 \noindent
                <./img/tela_login.png>]
-<img/tela_cadastro.png, id=814, 1686.3pt x 942.52126pt>
+<img/tela_cadastro.png, id=862, 1686.3pt x 942.52126pt>
 File: img/tela_cadastro.png Graphic file (type png)
 
 <use img/tela_cadastro.png>
@@ -1915,7 +1967,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
-<img/tela_inicial.png, id=816, 1686.3pt x 564.1075pt>
+<img/tela_inicial.png, id=864, 1686.3pt x 564.1075pt>
 File: img/tela_inicial.png Graphic file (type png)
 
 <use img/tela_inicial.png>
@@ -1930,7 +1982,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 45.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 45.
-[56pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
+[59pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1943,7 +1995,7 @@ l.45 \noindent
                                                   \fi \fi 
 l.45 \noindent
                <./img/tela_cadastro.png> <./img/tela_inicial.png>]
-<img/tela_inicial_workflows.png, id=825, 1686.3pt x 942.52126pt>
+<img/tela_inicial_workflows.png, id=873, 1686.3pt x 942.52126pt>
 File: img/tela_inicial_workflows.png Graphic file (type png)
 
 <use img/tela_inicial_workflows.png>
@@ -1954,7 +2006,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--57
 
  []
 
-<img/tela_selecao_elementos.png, id=827, 1686.3pt x 942.52126pt>
+<img/tela_selecao_elementos.png, id=875, 1686.3pt x 942.52126pt>
 File: img/tela_selecao_elementos.png Graphic file (type png)
 
 <use img/tela_selecao_elementos.png>
@@ -1964,7 +2016,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 67.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 67.
- [57pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [60pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1975,7 +2027,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
-<img/tela_design_workflow.png, id=835, 1686.3pt x 942.52126pt>
+<img/tela_design_workflow.png, id=883, 1686.3pt x 942.52126pt>
 File: img/tela_design_workflow.png Graphic file (type png)
 
 <use img/tela_design_workflow.png>
@@ -1985,14 +2037,14 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 80.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 80.
- [58pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [61pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.80 
       <./img/tela_selecao_elementos.png>]
-<img/tela_definicao_entrada.png, id=841, 1686.3pt x 942.52126pt>
+<img/tela_definicao_entrada.png, id=890, 1686.3pt x 942.52126pt>
 File: img/tela_definicao_entrada.png Graphic file (type png)
 
 <use img/tela_definicao_entrada.png>
@@ -2002,7 +2054,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 89.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 89.
- [59pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [62pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2013,7 +2065,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
  []
 
-<img/tela_final_workflow.png, id=848, 1686.3pt x 820.06375pt>
+<img/tela_final_workflow.png, id=897, 1686.3pt x 820.06375pt>
 File: img/tela_final_workflow.png Graphic file (type png)
 
 <use img/tela_final_workflow.png>
@@ -2023,7 +2075,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 102.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 102.
- [60pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [63pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2035,10 +2087,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--105
  []
 
 
-LaTeX Warning: Reference `tela_status_workflow' on page 61 undefined on input l
+LaTeX Warning: Reference `tela_status_workflow' on page 64 undefined on input l
 ine 107.
 
-<img/tela_status_workflow.png, id=854, 1686.3pt x 722.7pt>
+<img/tela_status_workflow.png, id=903, 1686.3pt x 722.7pt>
 File: img/tela_status_workflow.png Graphic file (type png)
 
 <use img/tela_status_workflow.png>
@@ -2048,7 +2100,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 146.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 146.
- [61pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [64pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2065,14 +2117,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
-<img/tela_upload.png, id=865, 1686.3pt x 545.03625pt>
+<img/tela_upload.png, id=912, 1686.3pt x 545.03625pt>
 File: img/tela_upload.png Graphic file (type png)
 
 <use img/tela_upload.png>
 Package pdftex.def Info: img/tela_upload.png used on input line 156.
 (pdftex.def)             Requested size: 446.86737pt x 144.43391pt.
 
-<img/tela_armazenamento.png, id=867, 1686.3pt x 636.3775pt>
+<img/tela_armazenamento.png, id=914, 1686.3pt x 636.3775pt>
 File: img/tela_armazenamento.png Graphic file (type png)
 
 <use img/tela_armazenamento.png>
@@ -2082,7 +2134,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 169.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 169.
- [62pdfTeX warning (ext4): destination with the same identifier (name{table.6.1
+ [65pdfTeX warning (ext4): destination with the same identifier (name{table.6.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2099,7 +2151,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 66.
- [63pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [66pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2115,7 +2167,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 71.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 71.
- [64
+ [67
 
 ]
 Overfull \hbox (39.49681pt too wide) in paragraph at lines 98--99
@@ -2127,17 +2179,17 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 102.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 102.
-[65]
+[68]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 124.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 124.
- [66]
+ [69]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 142.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 142.
- [67]
+ [70]
 Overfull \hbox (13.6818pt too wide) in paragraph at lines 142--143
 \T1/lmr/m/n/12 tion (JSON) , Re-quest For Co-ments (RFC 4627). http://tools.iet
 f.org/pdf/rfc4627.pdf,
@@ -2153,7 +2205,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
-[68]
+[71]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
  (./monografia.bbl (./monografia.brf)
@@ -2164,7 +2216,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 81.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 81.
- [69
+ [72
 
 
 ])
@@ -2173,21 +2225,27 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
- [70]
+ [73]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
  (./monografia.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
-Package rerunfilecheck Info: File `monografia.out' has not changed.
-(rerunfilecheck)             Checksum: 4F33B0871D5EE3B351BB3CC491CF0F2E;3317.
 
+
+Package rerunfilecheck Warning: File `monografia.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `monografia.out':
+(rerunfilecheck)             Before: 473F737462A3EE6F184C9A6A2A7A4481;3550
+(rerunfilecheck)             After:  FA55DBAF107AD7F7B6C2ACBEAE0FF86F;3807.
 
 Package rerunfilecheck Warning: File `monografia.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `monografia.brf':
-(rerunfilecheck)             Before: 2A509E2016A93A22A1E9BFD52A461141;1636
-(rerunfilecheck)             After:  BE82379CB102EAD17B89F6A283A5B1FD;1636.
+(rerunfilecheck)             Before: 45AECCF3AB825915D02C82980A0A0896;1778
+(rerunfilecheck)             After:  B71E205E9A002A3019DD2DB4482BE78E;1787.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -2205,13 +2263,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  )
 (\end occurred when \iffalse on line 126 was incomplete) 
 Here is how much of TeX's memory you used:
- 14084 strings out of 493089
- 209801 string characters out of 6134841
- 383026 words of memory out of 5000000
- 16952 multiletter control sequences out of 15000+600000
+ 14112 strings out of 493089
+ 210229 string characters out of 6134841
+ 383540 words of memory out of 5000000
+ 16967 multiletter control sequences out of 15000+600000
  65299 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,10n,69p,1815b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,69p,1815b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/201
 5/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/f
 onts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/d
@@ -2230,10 +2288,10 @@ e/2015/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/cm-super/sfrm2074.pfb>
-Output written on monografia.pdf (82 pages, 8994196 bytes).
+Output written on monografia.pdf (85 pages, 9008223 bytes).
 PDF statistics:
- 1041 PDF objects out of 1200 (max. 8388607)
- 846 compressed objects within 9 object streams
- 192 named destinations out of 1000 (max. 500000)
- 517 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1092 PDF objects out of 1200 (max. 8388607)
+ 894 compressed objects within 9 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 541 words of extra memory for PDF output out of 10000 (max. 10000000)
 

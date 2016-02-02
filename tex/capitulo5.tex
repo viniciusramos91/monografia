@@ -62,7 +62,7 @@ Nessa nova arquitetura, o BioNimbuZ não será composto apenas pelas três camad
 \item \textbf{Infraestrutura:} Composta pelos provedores de serviço utilizados pelo BioNimbuZ e que compõem sua federação de nuvens.
 \end{itemize}
 
-As Seções \ref{cap5sec3}, \ref{cap5sec4} e \ref{cap5sec5} trazem detalhes das camadas supracitadas.
+A Seção \ref{cap5sec4} traz os detalhes de implementação da aplicação \textit{web} e a maneira a qual foi concebida.
 
 \section{Aplicação \textit{Web}} \label{cap5sec4}
 %	Para que o BioNimbuZ se tornasse acessível através da Internet, foi necessária a implementação de um método de acesso baseado em tecnologias Web. Para isso, foi desenvolvida um Sistema Gerenciador de \textit{Workflows} basado em interface gráfica utilizando a linguagem de programação Java, em conjunto com outros \textit{frameworks}, como: Java JSF, biblioteca de componentes visuais PrimeFaces, páginas HTML, códigos de estilo CSS.
@@ -106,46 +106,208 @@ Dessa forma, utilizando-se o padrão MVC descrito anteriormente, foi projetada e
 
 \subsection{Camada de Modelo} \label{cap5sec4subsec1}
 
+Geralmente a primeira fase do desenvolvimento de um software, é levantar os requisitos e definir as entidades principais do sistema, formando assim um modelo do sistema. As entidades de um sistema podem ser qualquer coisa que façam sentido na solução do problema específico, para o qual aquele sistema foi criado. Por exemplo, um usuário do mundo real pode ser mapeado em uma entidade de sistema chamada \textit{User} com uma lista de características, tais como: nome, Cadastro de Pessoa Física, Registro Geral, sexo, telefone, email, etc. A depender do sistema, aspectos específicos podem ser definidos. Por exemplo, em um sistema médico atributos como tipo sanguineo e densidade óssea são importantes, mas ao mesmo tempo, esses atributos, geralmente, não tem finalidade em um sistema bancário, por exemplo.
+
+Assim, essa camada deve prover entidades mapeadas que façam sentido para o sistema (com atributos bem definidos) e também deve garantir que seu estado seja persistente e íntegro a cada inclusão, atualização ou deleção. 
+
+Nesse cenário, foram mapeadas entidades importantes para o sistema BioNimbuZ e também foi desenvolvido o acesso a banco de dados para garantir a persistência dessas informações. O bando de dados escolhido foi o \textbf{MySQL} \cite{mysql_url} por ser confiável, de fácil instalação e manutenção e por possibilitar a replicação dos dados, evitando assim um ponto único de falhas. Foi definido que sua localização e seu método de acesso deveriam ser desenvolvidos no núcleo, conforme proposta de nova arquitetura apresentada na Seção \ref{cap5sec3}.
+
+As principais entidades do sistema e seus respectivos atributos são descritos a seguir:
+
+\begin{itemize}
+	\item \textbf{\texttt{Usuário}:} Contém todos os dados necessários para identificar um usuário no sistema. A Tabela \ref{tab:atributos_usuario} apresenta todos os atributos de um Usuário.
+
+		\begin{table}[H]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{||c|c||}
+			\hline
+			\textbf{Atributo} & \textbf{Descrição}  \\
+			\hline  
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{id}}}				& \multicolumn{1}{l||}{Sequência de caracteres que identifica unicamente um usuário no sistema.} \\ 
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{login}}}			& \multicolumn{1}{l||}{Contém o \textit{login} para o usuário entrar no sistema.} \\
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{password}}}			& \multicolumn{1}{l||}{Senha utilizada para entrar no sistema.} \\  
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{name}}}				& \multicolumn{1}{l||}{Contém o nome do usuário.} \\ 
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{cpf}}} 				& \multicolumn{1}{l||}{Cadastro de Pessoa Física do usuário.}\\ 
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{cellphone}}}		& \multicolumn{1}{l||}{Celular do usuário.}        \\ 
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{storageUsage}}}		& \multicolumn{1}{l||}{Contém a soma de \textit{bytes} dos arquivos enviados pelo usuário ao sistema.}        \\
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{List<FileInfo>}}}	& \multicolumn{1}{l||}{Contém a lista de arquivos pertencente ao usuário.}        \\
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{List<Workflows}}}	& \multicolumn{1}{l||}{Lista de \textit{workflows} submetidos pelo usuário.}        \\
+			\hline
+		\end{tabular}
+		}
+		\caption{Lista de atributos da entidade \texttt{Usuário}.}
+		\label{tab:atributos_usuario}
+	\end{table}	
+		
+	\item \textbf{\texttt{FileInfo}:} Contém as informações acerca de arquivos que são enviados à plataforma BioNimbuZ e apresentado na Tabela \ref{tab:atributos_file_info}.
+		\begin{table}[H]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{||c|c||}
+			\hline
+			\textbf{Atributo} & \textbf{Descrição}  \\
+			\hline  
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{id}}}				& \multicolumn{1}{l||}{Identificador único do arquivo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{name}}}				& \multicolumn{1}{l||}{Nome do arquivo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{size}}}				& \multicolumn{1}{l||}{Tamanho em \textit{bytes} do arquivo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{userId}}}			& \multicolumn{1}{l||}{Identificador do usuário que realizou o \textit{upload} deste arquivo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{uploadTimestamp}}}	& \multicolumn{1}{l||}{Dia e horário do \textit{upload} do arquivo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{hash}}}				& \multicolumn{1}{l||}{Contém o \textit{hash} do arquivo para verificação de sua integridade.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{payload}}}			& \multicolumn{1}{l||}{\textit{Bytes} contendo o arquivo em si.} \\ 			
+			\hline
+		\end{tabular}
+		}
+		\caption{Lista de atributos da entidade \texttt{}.}
+		\label{tab:atributos_file_info}
+	\end{table}	
+	
+	\item \textbf{\texttt{Job}:} Define um passo do \textit{workflow}. No BioNimbuZ, todo \textit{workflow} é composto por uma sequência de \textit{jobs}. Seus atributos são mostrados na Tabela \ref{tab:atributos_job}.
+
+		\begin{table}[H]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{||c|c||}
+			\hline
+			\textbf{Atributo} & \textbf{Descrição}  \\
+			\hline  
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{id}}}				& \multicolumn{1}{l||}{Identificado do \textit{job}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{serviceId}}}		& \multicolumn{1}{l||}{Identificador do software computacional disponibilizado pelo BioNimbuZ.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{args}}}				& \multicolumn{1}{l||}{Campo opcional que contém os argumentos de entrada de um dado software.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{List<FileInfo>}}}	& \multicolumn{1}{l||}{Lista de arquivos de entrada daquele \textit{job}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{output}}}			& \multicolumn{1}{l||}{Nome do arquivo de saída deste passo.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{dependencies}}}		& \multicolumn{1}{l||}{Contém os passos que devem ser executados antes da execução desse \textit{job}.} \\ 			
+			\hline
+		\end{tabular}
+		}
+		\caption{Lista de atributos da entidade \texttt{Job}.}
+		\label{tab:atributos_job}
+	\end{table}	
+	
+	\item \textbf{\texttt{Workflow}:} Descreve a entidade alvo desse sistema, o \textit{workflow} contendo sua lista de passos (\textit{jobs}). Seus atributos são mostrados na Tabela \ref{tab:atributos_workflow}.
+		\begin{table}[H]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{||c|c||}
+			\hline
+			\textbf{Atributo} & \textbf{Descrição}  \\
+			\hline  
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{id}}}			& \multicolumn{1}{l||}{Identificador do \textit{workflow}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{List<Job>}}}	& \multicolumn{1}{l||}{Lista de \textit{jobs} que compõem o \textit{workflow}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{datestamp}}}	& \multicolumn{1}{l||}{Dia e horário da criação do \textit{workflow}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{userId}}}		& \multicolumn{1}{l||}{Identificador do usuário que criou o \textit{workflow}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{description}}}	& \multicolumn{1}{l||}{Breve descrição do \textit{workflow}.} \\ 			
+			\hline
+			\multicolumn{1}{||l|}{\textbf{\texttt{status}}}		& \multicolumn{1}{l||}{Estado atual do \textit{workflow} (pendente, executando, pausado, com erros, etc).} \\
+			\hline
+		\end{tabular}
+		}
+		\caption{Lista de atributos da entidade \texttt{Workflow}.}
+		\label{tab:atributos_workflow}
+	\end{table}
+\end{itemize}
+
+Assim, com as entidades do sistema projetadas, passou-se ao desenvolvimento da próxima camada do modelo \textit{MVC}, a camada de visualização. Seus detalhes são apresentados na próxima Seção, \ref{cap5sec4subsec2}.
+
 \subsection{Camada de Visualização} \label{cap5sec4subsec2}
 
-Primeiramente, foi desenvolvida a camada de visualização do modelo \textit{MVC}. Para tal, foram implementadas páginas em \textbf{HTML} \cite{html_rfc} (\textit{Hypertext Markup Language}) utilizando componentes visuais da biblioteca \textit{Primefaces} \cite{primefaces_url}. O \textit{framework} \textbf{\textit{Primefaces}} possibilita utilizar componentes visuais ricos e de maneira simples, sem se preocupar em ajustar parâmetros visuais ou de programação. 
+Após o mapeamentos das entidades necessárias para o sistema gerenciador de \textit{workflow}, foi desenvolvida a camada de visualização do modelo \textit{MVC}. Para tal, foram implementadas páginas em \textbf{HTML} \cite{html_rfc} (\textit{Hypertext Markup Language}) utilizando componentes visuais da biblioteca \textit{Primefaces} \cite{primefaces_url}. O \textit{framework} \textbf{\textit{Primefaces}} possibilita utilizar componentes visuais ricos e de maneira simples, sem se preocupar em ajustar parâmetros visuais ou de programação. 
 
-Isso significa que, utilizando o \textit{Primefaces}, não é necessário desenvolver os códigos de estilo \textit{CSS} \cite{css_rfc} (\textit{Cascading Style Sheets} - especificação que define como os elementos que compõem uma página, um documento ou aplicação \textit{web} serão exibidos). Também não é necessário desenvolver código \textit{JavaScript} \cite{js_rfc} (linguagem de programação baseada em \textit{scripts}, utilizada na parte cliente de páginas \textit{web}, isto é, código executado no navegador do usuário), descrevendo a interação entre os elementos visuais. Essas duas características do \textit{Primefaces} facilitam o desenvolvimento de páginas \textit{web} interativas e dinâmicas. 
+Isso significa que, utilizando o \textit{Primefaces}, não é necessário desenvolver os códigos de estilo \textit{CSS} \cite{css_rfc} (\textit{Cascading Style Sheets} - especificação que define como os elementos que compõem uma página, um documento ou aplicação \textit{web} serão exibidos). 
 
-A Seção \ref{cap5sec3subsec2} trata da Camada de Controle, a qual também compõe o Modelo \textit{MVC}.
+\textit{Primefaces} também possibilita a criação de páginas \textit{web} sem desenvolver código \textit{JavaScript} \cite{js_rfc} (linguagem de programação baseada em \textit{scripts}, utilizada na parte cliente de páginas \textit{web}, isto é, código executado no navegador do usuário), tornando o processo de desenvolvimento muito mais eficaz, dado que não é necessário desenvolver a interação entre os elementos. 
 
-\subsection{Camada de Controle} \label{cap5sec4subsec3}
+Essas duas características do \textit{Primefaces} facilitam a criação de páginas \textit{web}, possibilitando o desenvolvimento de páginas mais interativas e dinâmicas.
 
-Conforme o que foi exposto previamente, a camada de controle tem a responsabilidade de interpretar os dados enviados pelo usuário, a partir da camada de visualização (que neste projeto foi desenvolvida a partir de páginas \textit{HTML}), sinalizando ao sistema o que aqueles comandos representam.
-
-Assim, foram desenvolvidas classes Java controladoras para tratar as requisições disparadas nas páginas \textit{web} de forma que houvesse uma ligação entre as classes Java e suas respectiva páginas \textit{HTML}. Essa correspondência é mostrada na Tabela \ref{tab:tabela_clases_paginas} e descrita a seguir:
+A partir da escolha de tecnologias, foram então desenvolvidas as páginas \textit{web} do sistema. O resultado será apresentado no \refCap{capitulo6}, o qual trata dos resultado obtidos com o desenvolvimento do sistema gerenciador de \textit{workflows}. A Tabela \ref{tab:tabela_clases_paginas} apresenta a lista de páginas e suas respectivas funções .
 
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{||c|c||}
 \hline
-\textbf{Classe Java} & \textbf{Página relacionada}  \\
+\textbf{Página \textit{HTML}} & \textbf{Função}  \\
 \hline
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{SessionBean}}}				& \multicolumn{1}{l||}{Página de \textit{login}} \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{login.html}}}				& \multicolumn{1}{l||}{Página de \textit{login}} \\ 
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{SignUpBean}}}				& \multicolumn{1}{l||}{Página de cadastro de novos usuários} \\
+\multicolumn{1}{||l|}{\textbf{\texttt{sign\_up.html}}}			& \multicolumn{1}{l||}{Página de cadastro de novos usuários} \\
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{FileUploadBean}}}			& \multicolumn{1}{l||}{Página relativa à \textit{upload} de arquivos} \\  
+\multicolumn{1}{||l|}{\textbf{\texttt{file\_upload.html}}}		& \multicolumn{1}{l||}{Página relativa à \textit{upload} de arquivos} \\  
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{DeleteFileBean}}} 			& \multicolumn{1}{l||}{Página de deleção de arquivos do usuário} \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{delete\_file.html}}}		& \multicolumn{1}{l||}{Página de deleção de arquivos do usuário} \\ 
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowComposerBean}}} 	& \multicolumn{1}{l||}{Página de composição, \textit{design} e submissão de \textit{workflows}}      \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{workflow\_composer.html}}} 	& \multicolumn{1}{l||}{Página de composição, \textit{design} e submissão de \textit{workflows}}\\ 
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowStatusBean}}}		& \multicolumn{1}{l||}{Página para visualização do \textit{status} dos \textit{workflows} gerenciados pelo usuário}        \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{workflow\_status.html}}}	& \multicolumn{1}{l||}{Página para visualização do \textit{status} dos \textit{workflows} gerenciados pelo usuário}        \\ 
 \hline
-\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowHistoryBean}}}		& \multicolumn{1}{l||}{Contém o histórico de execução de um determinado \textit{workflow}}        \\
+\multicolumn{1}{||l|}{\textbf{\texttt{workflow\_history.html}}}	& \multicolumn{1}{l||}{Contém o histórico de execução de um determinado \textit{workflow}}        \\
 \hline
 \end{tabular}
 }
 \caption{Relação entre classes Java e páginas \textit{HTML}.}
 \label{tab:tabela_clases_paginas}
+\end{table}
+
+A Seção \ref{cap5sec4subsec3} trata da Camada de Controle e as principais classes envolvidas em seu desenvolvimento.
+
+\subsection{Camada de Controle} \label{cap5sec4subsec3}
+
+Conforme o que foi exposto previamente, a camada de controle tem a responsabilidade de interpretar os dados enviados pelo usuário, a partir da camada de visualização (que neste projeto foi desenvolvida a partir de páginas \textit{HTML}), sinalizando ao sistema o que aqueles comandos representam. Essa passagem de dados, da página \textit{HTML} para as classes \textit{Java} é de responsabilidade do \textit{framework MVC JSF}.
+
+Assim, foram desenvolvidas classes Java controladoras para tratar as requisições disparadas nas páginas \textit{web} de forma que houvesse uma correspondência entre as classes Java e suas respectiva páginas \textit{HTML}. Essa correspondência é mostrada na Tabela \ref{tab:tabela_java_paginas} e descrita a seguir:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{||c|c||}
+\hline
+\textbf{Classe Java} & \textbf{Página relacionada}  \\
+\hline
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{SessionBean}}}				& \multicolumn{1}{l||}{\texttt{login.html}} \\ 
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{SignUpBean}}}				& \multicolumn{1}{l||}{\texttt{sign\_up.html}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{FileUploadBean}}}			& \multicolumn{1}{l||}{\texttt{file\_upload.html}} \\  
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{DeleteFileBean}}} 			& \multicolumn{1}{l||}{\texttt{delete\_file.html}} \\ 
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowComposerBean}}} 	& \multicolumn{1}{l||}{\texttt{workflow\_composer.html}}      \\ 
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowStatusBean}}}		& \multicolumn{1}{l||}{\texttt{workflow\_status.html}}        \\ 
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowHistoryBean}}}		& \multicolumn{1}{l||}{\texttt{workflow\_history.html}}        \\
+\hline
+\end{tabular}
+\caption{Relação entre classes Java e páginas \textit{HTML}.}
+\label{tab:tabela_java_paginas}
 \end{table}
 
 \begin{itemize}
@@ -175,7 +337,7 @@ Dessa forma, essas classes realizam a função de controle do modelo \textit{MVC
 
 Um dos requisitos da solução proposta era que os componentes de software compostos pela aplicação \textit{web} e pelo núcleo do BioNimbuZ fossem desenvolvidos de maneira separada. Com isso, surgiu o problema de comunicação entre esses dois elementos.
 
-Nesse contexto, a solução desenvolvida tem como base a comunicação utilizando-se \textit{webservices REST}(\textit{\textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer}). \textit{REST} é definido como ''\textit{estilo de arquitetura para sistemas de hipermídia distribuídos, descrevendo os princípios de engenharia de software que guiam o e as restrições de interação escolhidos para manter esses princípios, enquanto contrastando-as com as restrições de outros estilos arquiteturais.}'' \cite{rest}. Voltado para sistema baseados na Internet, tem sido amplamente utilizado na integração de sistemas, pois utiliza operações definidas no protocolo \textit{HTTP} (tais como \textit{PUT}, \textit{GET} e \textit{DELETE}). Assim, softwares que ''entendam'' o protocolo \textit{HTTP}, podem utilizar, geralmente, soluções baseadas em \textit{REST}.
+Nesse contexto, a solução desenvolvida tem como base a comunicação utilizando-se \textit{webservices REST}(\textit{\textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer}). \textit{REST} é definido como ``\textit{estilo de arquitetura para sistemas de hipermídia distribuídos, descrevendo os princípios de engenharia de software que guiam o e as restrições de interação escolhidos para manter esses princípios, enquanto contrastando-as com as restrições de outros estilos arquiteturais.}'' \cite{rest}. Voltado para sistema baseados na Internet, tem sido amplamente utilizado na integração de sistemas, pois utiliza operações definidas no protocolo \textit{HTTP} (tais como \textit{PUT}, \textit{GET} e \textit{DELETE}). Assim, softwares que ``entendam'' o protocolo \textit{HTTP}, podem utilizar, geralmente, soluções baseadas em \textit{REST}.
 
 Dessa forma, para possibilitar a troca de mensagens entre a aplicação \textit{web} e o núcleo do BioNimbuZ, foi necessário o desenvolvimento de três entidades principais: \textbf{Requisições} (\textit{requests}), \textbf{Respostas} (\textit{responses}) e \textbf{Ações} (\textit{actions}). Estas foram implementadas como \texttt{interface} Java, à fim de manter o código o mais genérico possível. Suas responsabilidades são as que seguem:
 
@@ -185,21 +347,7 @@ Dessa forma, para possibilitar a troca de mensagens entre a aplicação \textit{
 	\item \textbf{Respostas:} Definem a mensagem devolvida pelo núcleo do BioNimbuZ para uma dada ação. É verificada o código \textit{HTTP} de resposta (\textit{status code}), esperando-se, geralmente, o código \texttt{HTTP 200}, que indica sucesso na requisição. Outros código são comuns, tais como o código \texttt{HTTP 500}, sinalizando erro interno do servidor e \texttt{HTTP 400}, que significa que uma requisição foi mal montada (\textit{Bad Request}).
 \end{itemize} 
 
-Para permitir a execução de uma determinada \textit{Action}, e seus respectivos \textit{Requests} e \textit{Responses}, foram desenvolvidas duas classes Java para controlar seu fluxo, executando uma ação, enviando sua respectiva requisição e aguardando uma resposta. As responsabilidades dessas classes, chamadas \texttt{RestService} e \texttt{RestCommunicator}, estão listadas abaixo:
-
-\begin{itemize}
-	\item \textbf{\texttt{RestService}:} Contém a lista de métodos disponíveis na Camada de Comunicação. Outros componentes de software só podem requisitar um comando \textit{REST} a partir da instanciação desta classe e caso o respectivo método ter sido previamente implementado.
-	\item \textbf{\texttt{RestCommunicator}:} É responsável por prover um passo a passo a ser seguido para realização da comunicação via \textit{REST} da classe \texttt{RestService}. Utilizando o padrão de projeto \textit{Strategy} \cite{head_first_book} em conjunto com o conceito de polimorfismo, executa os seguinte métodos definido na interface \textit{Action}:
-	\begin{enumerate}
-		\item \textbf{\texttt{ping()}:} Verifica o estado do núcleo do BioNimbuZ antes de toda requisição, efetuando o comando \textit{ping} \cite{ping_rfc}, podendo retornar verdadeiro (\texttt{\textit{true}}) ou falso (\texttt{\textit{true}}). Em caso negativo, a requisição falha e retorna uma mensagem de erro ao usuário com a mensagem ''\textit{Erro Interno do Servidor}'', sinalizando a falha na comunicação com o núcleo;
-		\item \textbf{\texttt{setup()}:} Realiza a configuração prévia do objeto à ser enviado ao núcleo do BioNimbuZ, suprindo necessidades da comunicação via \textit{REST}, tais como: instanciação do cliente \textit{REST}, \textit{set} das informações necessárias para a requisição, etc;
-		\item \textbf{\texttt{prepareTarget()}:} Configura o endereço alvo (\textit{target}) daquela requisição. Aponta para uma \textit{URL} contendo o endereço IP do núcleo juntamente com o caminho do recuro \textit{REST} \cite{rest} que irá recepcionar a requisição setada;
-		\item \textbf{\texttt{execute()}:} Executa a Ação desejada, realizando a operação \textit{REST} definida pela requisição (\textit{GET}, \textit{POST}, \textit{DELETE}, etc), retornando uma resposta para as classes de controle.
-	\end{enumerate}
-\end{itemize}
-
-A partir destas classes, foram desenvolvidas as implementações das \texttt{interfaces} \texttt{Action}, \texttt{ResponseInfo} e \texttt{RequestInfo}. A Tabela \ref{tab:classes_java_rest} apresenta a responsabilidade de cada relação de classes \texttt{Action} x \texttt{ResponseInfo} x \texttt{RequestInfo}.
-
+A partir dessas definições, foram desenvolvidas as implementações das \texttt{interfaces} \texttt{Action}, \texttt{ResponseInfo} e \texttt{RequestInfo}. A Tabela \ref{tab:classes_java_rest} apresenta entre as classes \texttt{Action} x \texttt{ResponseInfo} x \texttt{RequestInfo}.
 
 \begin{table}[H]
 \centering
@@ -232,10 +380,42 @@ A partir destas classes, foram desenvolvidas as implementações das \texttt{int
 \label{tab:classes_java_rest}
 \end{table}
 
+\subsection{Implementação da Camada de Comunicação na Aplicação \textit{Web}} \label{cap5sec5subsec1}
 
-\section{Alterações realizadas no Núcleo do BioNimbuZ} \label{cap5sec6}
-    
-Compreende os serviços providos atualmente pelo BioNimbuz (como serviço de armazenamento, escalonamento, descobrimento) acrescido do código necessário para executar os comandos e requisições vindos da parte Cliente. Também deverá implementar métodos de acesso à bancos de dados relacionais, pois deverá persistir os dados trocados entre a aplicação Cliente e o Servidor do BioNimbuZ (entidades como Usuário, Workflow e Arquivo).
+Para permitir a execução de uma determinada \textit{Action}, e seus respectivos \textit{Requests} e \textit{Responses}, foram desenvolvidas duas classes Java para controlar seu fluxo, executando uma ação, enviando sua respectiva requisição e aguardando uma resposta. As responsabilidades dessas classes, chamadas \texttt{RestService} e \texttt{RestCommunicator}, estão listadas abaixo:
+
+\begin{itemize}
+	\item \textbf{\texttt{RestService}:} Contém a lista de métodos disponíveis na Camada de Comunicação. Outros componentes de software só podem requisitar um comando \textit{REST} a partir da instanciação desta classe e caso o respectivo método ter sido previamente implementado.
+	\item \textbf{\texttt{RestCommunicator}:} É responsável por prover um passo a passo a ser seguido para realização da comunicação via \textit{REST} da classe \texttt{RestService}. Utilizando o padrão de projeto \textit{Strategy} \cite{head_first_book} em conjunto com o conceito de polimorfismo, executa os seguinte métodos definido na interface \textit{Action}:
+	\begin{enumerate}
+		\item \textbf{\texttt{ping()}:} Verifica o estado do núcleo do BioNimbuZ antes de toda requisição, efetuando o comando \textit{ping} \cite{ping_rfc}, podendo retornar verdadeiro (\texttt{\textit{true}}) ou falso (\texttt{\textit{falso}}). Em caso negativo, a requisição falha e retorna uma mensagem de erro ao usuário com a mensagem ``\textit{Erro Interno do Servidor}'', sinalizando a falha na comunicação com o núcleo;
+		\item \textbf{\texttt{setup()}:} Realiza a configuração prévia do objeto à ser enviado ao núcleo do BioNimbuZ, suprindo necessidades da comunicação via \textit{REST}, tais como: instanciação do cliente \textit{REST}, \textit{set} das informações necessárias para a requisição, etc;
+		\item \textbf{\texttt{prepareTarget()}:} Configura o endereço alvo (\textit{target}) daquela requisição. Aponta para uma \textit{URL} contendo o endereço IP do núcleo juntamente com o caminho do recuro \textit{REST} \cite{rest} que irá recepcionar a requisição setada;
+		\item \textbf{\texttt{execute()}:} Executa a Ação desejada, realizando a operação \textit{REST} definida pela requisição (\textit{GET}, \textit{POST}, \textit{DELETE}, etc), retornando uma resposta para as classes de controle.
+	\end{enumerate}
+\end{itemize}
+
+\subsection{Implementação da Camada de Comunicação no Núcleo do BioNimbuZ} \label{cap5sec5subsec2}
+
+\section{Alterações realizadas no Núcleo do BioNimbuZ} \label{cap5sec6}   
+
+À fim de se obter a integração da aplicação \textit{web} com o atual BioNimbuZ, diversas alterações foram realizadas no núcleo do sistema. Entre elas estão: 
+
+\begin{itemize}
+	\item Desenvolvimento da parte receptora das requisições enviadas pela aplicação \textit{web} (recursos \textit{REST} \cite{rest}). Para isso foi necessário desenvolver todas as entidades da aplicação \textit{web}, as quais foram descritas na Seção anterior, também no núcleo do BioNimbuZ;
+	\item Desenvolvimento do método de acesso à base de dados \textit{MySQL}. Para isso foi utilizada a biblioteca de persistência \textit{Hibernate} \cite{hibernate_url};
+	\item Formas de controle dos \textit{workflows} enviados à plataforma, gravando todo o caminho seguido para que, posteriormente, essa informação seja repassada para que o usuário possa rastrear e analisar sua execução. Para isso, foram realizadas melhorias na Controladora de \textit{Jobs} (\textit{JobController}), já que sua responsabilidade é o gerenciamento dos \textit{jobs}.
+\end{itemize}
+
+As
+
+\subsection{Recursos \textit{REST}} \label{cap5sec6subsec1}
+ 
+
+\subsection{Método de acesso à base de dados} \label{cap5sec6subsec2}
+
+
+\subsection{Controle de \textit{Workflow}} \label{cap5sec6subsec3}
 
 %Descrever a arquitetura do BioNimbuZ (Linha de comando, módulos, provedores, camadas...)
 %-	Demonstrar o funcionamento anterior (linha de comando) e propor uma nova interface que dê %suporte ao desenvolvimento do novo módulo controlador de Jobs.
