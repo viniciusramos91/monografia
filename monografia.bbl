@@ -30,11 +30,23 @@ Research Studio Digital~Memory Engineering.
 \newblock \url{http://www.rs-dme.at/}.
 \newblock Acessado online em 29 de janeiro de 2016.
 
+\bibitem{rest}
+Roy~T. Fielding.
+\newblock {\em {Architectural styles and the design of network-based software
+  architectures}}.
+\newblock PhD thesis, University of California, Irvine, Irvine - Irvine, CA
+  92697, USA, 2000.
+
 \bibitem{cloud_360}
-I.~Foster, Yong Zhao, I.~Raicu, e Shiyong Lu.
-\newblock Cloud computing and grid computing 360-degree compared.
-\newblock In {\em Grid Computing Environments Workshop, 2008. GCE '08}, pages
-  1--10, Nov 2008.
+Ian Foster, Yong Zhao, Ioan Raicu, e Shiyong Lu.
+\newblock {Cloud Computing and Grid Computing 360-Degree Compared}.
+\newblock In {\em Grid Computing Environments Workshop, 2008. GCE \&\#039;08},
+  pages 1--10. IEEE, November 2008.
+
+\bibitem{head_first_book}
+Elisabeth Freeman, Eric Freeman, Bert Bates, e Kathy Sierra.
+\newblock {\em Head First Design Patterns}.
+\newblock O' Reilly \& Associates, Inc., 2004.
 
 \bibitem{problem_solving}
 E.~Gallopoulos, E.~Houstis, e J.R. Rice.
@@ -43,12 +55,22 @@ E.~Gallopoulos, E.~Houstis, e J.R. Rice.
 \newblock {\em Computational Science Engineering, IEEE}, 1(2):11--23, Summer
   1994.
 
+\bibitem{js_rfc}
+B.~Hoehrmann.
+\newblock {Scripting Media Types}.
+\newblock RFC 4329 (Informational), April 2006.
+
 \bibitem{kepler_screen}
 Kepler.
 \newblock Exemplo de interface gráfica do sistema kepler.
 \newblock
   \url{http://www.cell.com/cms/attachment/2002983292/2011324825/gr2.jpg}.
 \newblock Acessado online em 30 de janeiro de 2016.
+
+\bibitem{css_rfc}
+H.~Lie, B.~Bos, e C.~Lilley.
+\newblock {The text/css Media Type}.
+\newblock RFC 2318 (Informational), March 1998.
 
 \bibitem{kepler_system}
 Bertram Lud\"{a}scher, Ilkay Altintas, Chad Berkley, Dan Higgins, Efrat Jaeger,
@@ -63,11 +85,12 @@ S.~Majithia, M.~Shields, I.~Taylor, e I.~Wang.
 \newblock In {\em Web Services, 2004. Proceedings. IEEE International
   Conference on}, pages 514--521, July 2004.
 
-\bibitem{sun_url}
-Oracle.
-\newblock Sun microsystems.
-\newblock \url{https://www.oracle.com/sun/index.html}.
-\newblock Acessado online em 31 de janeiro de 2016.
+\bibitem{ping_rfc}
+J.~Quittek e K.~White.
+\newblock {Definitions of Managed Objects for Remote Ping, Traceroute, and
+  Lookup Operations}.
+\newblock RFC 4560 (Proposed Standard), June 2006.
+\newblock Acessado online em 01 de fevereiro de 2016.
 
 \bibitem{taverna_screen}
 Taverna.

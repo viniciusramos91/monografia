@@ -9,29 +9,29 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Fases da computa\IeC {\c c}\IeC {\~a}o em nuvem, segundo White E. \textit {et al.} [26].}}{16}{figure.2.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de Vida de um \textit {Workflow}.}}{20}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitetura multi-camada do \textit {DiscoveryNet} (adaptado de \cite {can_one_size_fit_all}).}}{24}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitetura multicamada do \textit {DiscoveryNet} (adaptado de \cite {can_one_size_fit_all}).}}{24}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Ambiente gr\IeC {\'a}fico do Taverna Online (retirado de \cite {taverna_screen}).}}{25}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Ambiente gr\IeC {\'a}fico do Triana (retirado de \cite {triana_screen}).}}{26}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces A sem\IeC {\^a}ntica da intera\IeC {\c c}\IeC {\~a}o entre os componentes \IeC {\'e} determinada pelo \textit {director}, o qual controla a execu\IeC {\c c}\IeC {\~a}o (adaptado de \cite {kepler_system}).}}{27}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Interface gr\IeC {\'a}fica do Kepler (retirado de \cite {kepler_screen}).}}{28}{figure.3.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Modelo de servi\IeC {\c c}o utilizado no ZooKeeper (adaptado de [59]).}}{33}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Exemplo de estrutura de n\IeC {\'o}s do ZooKeeper.}}{34}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Antiga arquitetura do BioNimbuZ.}}{36}{figure.4.3}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Modelo de servi\IeC {\c c}o utilizado no ZooKeeper (adaptado de [59]).}}{34}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Exemplo de estrutura de n\IeC {\'o}s do ZooKeeper.}}{35}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Antiga arquitetura do BioNimbuZ.}}{37}{figure.4.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Terminal} do BioNimbuZ.}}{43}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Nova Arquitetura do BioNimbuZ.}}{46}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Modelo \textit {Model-View-Controller}.}}{48}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{49}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Tela de cadastro de novos usu\IeC {\'a}rios.}}{50}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{50}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Tela inicial de cria\IeC {\c c}\IeC {\~a}o dos \textit {workflows}.}}{51}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Tela utilizada para selecionar elementos que ir\IeC {\~a}o comp\IeC {\^o}r o \textit {workflow}.}}{52}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Nesta tela o usu\IeC {\'a}rio comp\IeC {\~o}e o fluxo de seu \textit {workflow}.}}{53}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Nesta tela o usu\IeC {\'a}rio define par\IeC {\^a}metros de execu\IeC {\c c}\IeC {\~a}o de um elemento do \textit {workflow}.}}{54}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{55}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{55}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Tela utilizada para realizar o \textit {upload} de arquivos.}}{56}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Nesta tela usu\IeC {\'a}rios controlam seu armazenamento e verificam sua porcentagem.}}{57}{figure.5.14}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Terminal} do BioNimbuZ.}}{44}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Nova Arquitetura do BioNimbuZ.}}{47}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Modelo \textit {Model-View-Controller}.}}{49}{figure.5.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{55}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Tela de cadastro de novos usu\IeC {\'a}rios.}}{56}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{56}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Tela inicial de cria\IeC {\c c}\IeC {\~a}o dos \textit {workflows}.}}{57}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Tela utilizada para selecionar elementos que ir\IeC {\~a}o comp\IeC {\^o}r o \textit {workflow}.}}{58}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Nesta tela o usu\IeC {\'a}rio comp\IeC {\~o}e o fluxo de seu \textit {workflow}.}}{59}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Nesta tela o usu\IeC {\'a}rio define par\IeC {\^a}metros de execu\IeC {\c c}\IeC {\~a}o de um elemento do \textit {workflow}.}}{60}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{61}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{61}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Tela utilizada para realizar o \textit {upload} de arquivos.}}{62}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Nesta tela usu\IeC {\'a}rios controlam seu armazenamento e verificam sua porcentagem.}}{63}{figure.6.11}
 \addvspace {10\p@ }

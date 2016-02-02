@@ -1,4 +1,4 @@
-Este capítulo trata das etapas do desenvolvimento do Sistema Gerenciador de \textit{Workflows} Científicos para a plataforma BioNimbuZ, e as alterações necessárias para que ele fosse suportado pelo atual estado do sistema. Primeiramente, na Seção \ref{cap5sec1} é apresentado o funcionamento do BioNimbuZ antes do desenvolvimento do sistema gerenciador de \textit{workflows}, o qual era executado através de um \textit{terminal}. Uma proposta de nova arquitetura para o sistema é apresentada na Seção \ref{cap5sec2}. A Seção \ref{cap5sec3} mostra os detalhes de como a Aplicação \textit{Web} foi desenvolvida para dar suporte ao Sistema Gerenciador de \textit{Workflows}. Na Seção \ref{cap5sec4}, são expostos os motivos da contrução de um novo componente da arquitetura de \textit{software}, chamada Camada de Comunicação, responsável por realizar a troca de mensagens entre o Núcleo do BioNimbuZ e a Aplicação \textit{Web} utilizando \textit{Webservices}. Por último, na Seção \ref{cap5sec5} são apresentadas as alterações feitas no BioNimbuZ para dar suporte à esse novo modo de acesso, composto pela Aplicação \textit{Web} e a Camada de Comunicação.
+Este capítulo trata das etapas do desenvolvimento do Sistema Gerenciador de \textit{Workflows} Científicos para a plataforma BioNimbuZ, e as alterações necessárias para que ele fosse suportado pelo atual estado do sistema. Primeiramente, na Seção \ref{cap5sec1} é apresentado o funcionamento do BioNimbuZ antes do desenvolvimento do sistema gerenciador de \textit{workflows}, o qual era executado através de um \textit{terminal}. Os novos requisitos do sistema são apresentados na Seção \ref{cap5sec2}. Com esses requisitos, foi proposta uma nova arquitetura para o sistema, a qual é apresentada na Seção \ref{cap5sec3}. A Seção \ref{cap5sec4} mostra os detalhes de como a Aplicação \textit{Web} foi desenvolvida para dar suporte ao Sistema Gerenciador de \textit{Workflows}. Na Seção \ref{cap5sec5}, são expostos os motivos da contrução de um novo componente da arquitetura de \textit{software}, chamada Camada de Comunicação, responsável por realizar a troca de mensagens entre o Núcleo do BioNimbuZ e a Aplicação \textit{Web} utilizando \textit{webservices REST}. Por último, na Seção \ref{cap5sec6} são apresentadas as alterações feitas no BioNimbuZ para suportar esse novo modo de acesso, composto pela aplicação \textit{web} e a camada de comunicação.
 
 \section{Do \textit{terminal} para a Interface \textit{Web}} \label{cap5sec1}
 
@@ -24,7 +24,11 @@ Dessa forma, utilizando a interface mostrada na Figura \ref{fig:terminal_bionimb
 
 Os comandos acima descrevem o passo a passo da execução de apenas um \textit{job}. Para um segundo passo, seria necessário submeter todos esses comandos novamente, com os dados de entrada do segundo \textit{job}. Assim, o método acima, via \textit{terminal}, não dava suporte à execução de \textit{workflows}, pois não era possível ligar elementos, formar dependências e controlar o fluxo de dados de maneira única. Eram necessárias diversas iterações da sequência de comandos acima descrita para se ter uma ligação entre os \textit{jobs} que o usuário quisesse executar. Dessa forma, o usuário deveria ter informações que, nem sempre, eram de seu conhecimento, como o \textit{IP} da máquina servidora do BioNimbuZ, o caminho do arquivo ou os argumentos de um serviço provido. 
 
-Portanto, tendo como base [], que diz que o ciclo de vida de um \textit{workflow} é composto pelos passos de projeto e composição, planejamento de recursos, execução, análise e compartilhamento de resultados, foi verificado que o acesso aos serviços providos pelo BioNimbuZ via \textit{terminal} poderia ser melhorado caso alguns requisitos fossem implementados, tais como:
+A próxima Seção apresenta os requisitos que foram verificados e implementados, com o objetivo de se desenvolver o sistema gerenciador de \textit{workflows} científicos proposto no presente trabalho.
+
+\section{Novos Requisitos} \label{cap5sec2}
+
+De acordo com as deficiências notadas do BioNimbuZ, foi verificado que o acesso aos serviços providos pelo BioNimbuZ via \textit{terminal} poderia ser melhorado caso alguns requisitos fossem implementados, tais como:
 
 \begin{itemize}
 	\item \textbf{Acesso via \textit{Internet}:} Prover de um meio de acesso à plataforma do BioNimbuZ à qualquer pessoa conectada à \textit{Internet};
@@ -35,9 +39,9 @@ Portanto, tendo como base [], que diz que o ciclo de vida de um \textit{workflow
     \item \textbf{Separação entre aplicação cliente e aplicação servidora:} Evitaria um ponto único de falhas, pois as aplicações poderiam ser executadas em ambientes diferentes, em infraestruturas diferentes e, no caso de falha de uma delas, a outra não seria prejudicada. Com esse requisito também seria possível reduzir custos, pois a infraestrutura necessária para executar a aplicação cliente não tem a necessidade de ser tão robusta quanto a aplicação servidora, pois apenas esta executaria os serviços computacionais providos pelo BioNimbuZ.
 \end{itemize}
 
-Na próxima Seção, será apresentada a nova arquitetura, contendo requisitos descritos acima que possibilitaram o desenvolvimento do Sistema Gerenciador de \textit{Workflows} Científicos, objetivo deste trabalho.
+Na próxima Seção, será apresentada a nova arquitetura, contendo os novos componentes de software e seu detalhamento.
 
-\section{Proposta de uma Nova Arquitetura} \label{cap5sec2}
+\section{Proposta de uma Nova Arquitetura} \label{cap5sec3}
 
 Tendo em vista os requisitos levantados, descritos na Seção \ref{cap5sec1}, e para que o BioNimbuZ se tornasse acessível através da Internet, foi necessário a implementação de um método de acesso baseado em tecnologias \textit{web}, substituindo o método antigo via \textit{terminal}. Para isso, foi desenvolvida um sistema gerenciador de \textit{workflows} basado em interface gráfica utilizando a linguagem de programação Java, em conjunto com \textit{frameworks web}. Para tal, uma nova proposta de arquitetura foi concebida, englobando as modificações necessárias (principalmente, na parte de comunicação entre os seguintes componentes do sistema: Aplicação \textit{Web} e Núcleo). 
 
@@ -60,7 +64,7 @@ Nessa nova arquitetura, o BioNimbuZ não será composto apenas pelas três camad
 
 As Seções \ref{cap5sec3}, \ref{cap5sec4} e \ref{cap5sec5} trazem detalhes das camadas supracitadas.
 
-\section{Aplicação \textit{Web}} \label{cap5sec3}
+\section{Aplicação \textit{Web}} \label{cap5sec4}
 %	Para que o BioNimbuZ se tornasse acessível através da Internet, foi necessária a implementação de um método de acesso baseado em tecnologias Web. Para isso, foi desenvolvida um Sistema Gerenciador de \textit{Workflows} basado em interface gráfica utilizando a linguagem de programação Java, em conjunto com outros \textit{frameworks}, como: Java JSF, biblioteca de componentes visuais PrimeFaces, páginas HTML, códigos de estilo CSS.
     
 	Este componente compreende o Sistema Gerenciador de \textit{Workflows} Científicos e deve prover meios para que usuários possam se logar no sistema BioNimbuZ através de uma interface gráfica acessível pela Internet e utilizem suas funcionalidades como envio de arquivos (que serão utilizados como entrada dos \textit{workflows} criados pelo usuário), exclusão de arquivos, visualização dos dados de saída gerados pela execução de seus \textit{workflows}, por exemplo. Pela interface, o usuário também deve ser capaz de criar e projetar seus \textit{workflows} de maneira gráfica, ligando passos, indicando dependências, incluindo argumentos e indicando quais arquivos de entrada serão utilizados.
@@ -100,185 +104,17 @@ O \textit{JavaServerFaces} é uma especificação Java para a construção de in
 
 Dessa forma, utilizando-se o padrão MVC descrito anteriormente, foi projetada e implementada a aplicação \textit{web} contendo os componentes necessários para o desenvolvimento do sistema gerenciador de \textit{workflows} científicos. 
 
-\subsection{Camada de Visualização} \label{cap5sec3subsec1}
+\subsection{Camada de Modelo} \label{cap5sec4subsec1}
 
-Primeiramente, foi desenvolvida a camada de visualização do modelo \textit{MVC}. Para tal, foram desenvolvidas páginas em \textbf{HTML} \cite{html_rfc} (\textit{Hypertext Markup Language}) utilizando componentes visuais da biblioteca \textit{Primefaces} \cite{primefaces_url}. O \textit{framework} \textbf{\textit{Primefaces}} possibilita utilizar componentes visuais ricos e de maneira simples, sem se preocupar em ajustar parâmetros visuais ou de programação.
+\subsection{Camada de Visualização} \label{cap5sec4subsec2}
 
-Abaixo, seguem as telas desenvolvidas para realizar a interface com o usuário e que, juntas, representam a camada de visualização da aplicação \textit{web}. \\
+Primeiramente, foi desenvolvida a camada de visualização do modelo \textit{MVC}. Para tal, foram implementadas páginas em \textbf{HTML} \cite{html_rfc} (\textit{Hypertext Markup Language}) utilizando componentes visuais da biblioteca \textit{Primefaces} \cite{primefaces_url}. O \textit{framework} \textbf{\textit{Primefaces}} possibilita utilizar componentes visuais ricos e de maneira simples, sem se preocupar em ajustar parâmetros visuais ou de programação. 
 
-
-\noindent
-\textbf{Tela de Login} \\
-
-\noindent
-A Figura \ref{fig:tela_login} mostra a tela inicial da aplicação \textit{web} desenvolvida. Nessa tela, o usuário deve entrar com seu usuário e senha cadastrados previamente para ter acesso aos recursos disponíveis no BioNimbuZ.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_login.png}
-	\caption{Tela inicial da aplicação \textit{web}.}
-	\label{fig:tela_login}
-\end{figure}
-
-\noindent
-\textbf{Tela de Cadastro} \\
-
-\noindent
-Por essa tela, novos usuários se cadastram na plataforma BioNimbuZ, incluindo seus dados, tais como telefone, nome, CPF, etc. A Figura \ref{fig:tela_cadastro} mostra a tela que é apresentada ao usuário.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.25 ]{tela_cadastro.png}
-	\caption{Tela de cadastro de novos usuários.}
-	\label{fig:tela_cadastro}
-\end{figure}
-
-\noindent
-\textbf{\textit{Tela Inicial}} \\
-
-\noindent
-Ao realizarem o \textit{login}, os usuários que possuírem acesso ao ambiente \textit{web} visualizarão a tela mostrada na Figura \ref{fig:tela_inicial}. Essa tela dá acesso às opções disponíveis no BioNimbuZ, tais como criar um novo \textit{workflow}, visualizar seu \textit{status}, enviar arquivos para plataforma, etc.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.25 ]{tela_inicial.png}
-	\caption{Tela inicial da aplicação \textit{web}.}
-	\label{fig:tela_inicial}
-\end{figure}
-
-\noindent
-\textbf{Tela inicial da criação dos \textit{Workflows}} \\
-
-\noindent
-Nesta tela, mostrada na Figura \ref{fig:tela_inicial_workflows}, o usuário inicia o projeto de seu \textit{workflow}, podendo escolher entre criar um novo \textit{workflow} ou importar um anteriormente criado. A aplicação \textit{web} possibilita, ao fim do projeto de um \textit{workflow}, exportá-lo. Assim, com esse \textit{workflow} exportado, é possível compartilhá-lo, sendo este a última fase do ciclo de vida de um \textit{workflow} (detalhado no \refCap{capitulo3}).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_inicial_workflows.png}
-	\caption{Tela inicial de criação dos \textit{workflows}.}
-	\label{fig:tela_inicial_workflows}
-\end{figure}
-
-\noindent
-\textbf{Tela de seleção de elementos} \\
-
-\noindent
-Ao clicar em ''Começar Projeto'', o usuário então é direcionado para a página de seleção de elementos, mostrada na Figura \ref{fig:tela_selecao_elementos}. Nela, o mesmo poderá planejar a execução de seu \textit{workflow}, escolhendo quais elementos irão compor este fluxo. A lista de elementos disponíveis é mantida no núcleo do BioNimbuZ e é enviada à aplicação quando esta é iniciada. À medida que o usuário escolhe os elementos, eles são adicionados na listagem ''Elementos Escolhidos'', podendo o mesmo excluí-los, caso não os queira mais.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_selecao_elementos.png}
-	\caption{Tela utilizada para selecionar elementos que irão compôr o \textit{workflow}.}
-	\label{fig:tela_selecao_elementos}
-\end{figure}
-
-\noindent
-\textbf{Tela de \textit{design} do \textit{workflow}} \\
-
-\noindent
-Com os elementos definidos na tela anterior (Figura \ref{fig:tela_selecao_elementos}), o usuário é redirecionado para a tela seguinte, passando para a fase de \textit{design} do \textit{workflow}. Nela, são apresentados os elementos escolhidos pelo usuário dispostos de maneira gráfica, conforme mostra a \ref{fig:tela_design_workflow}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_design_workflow.png}
-	\caption{Nesta tela o usuário compõe o fluxo de seu \textit{workflow}.}
-	\label{fig:tela_design_workflow}
-\end{figure}
-
-Com isso, o usuário pode definir as dependências de cada elemento, arrastando os pontos de ligação, definir suas entradas (arquivos enviados ou uma URL que contenha o caminho para realizar o download do arquivo para a plataforma BioNimbuZ), definir os parâmetros de execução (como argumentos daquele componente) ou apenas sinalizar que a entrada de um determinado elemento será a saída de outro. Para isso, ao se conectar dois elementos, é mostrada uma caixa de diálogo pedindo estes dados (Figura 5.9).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_definicao_entrada.png}
-	\caption{Nesta tela o usuário define parâmetros de execução de um elemento do \textit{workflow}.}
-	\label{fig:tela_definicao_entrada}
-\end{figure}
-
-\noindent
-\textbf{Tela de Confirmação} \\
-
-\noindent
-Com todos os elementos escolhidos e com suas dependências (entrada, saída e parâmetros de execução) satisfeitas, é apresentada uma tela de confimação (Figura \ref{fig:tela_final_workflow}), em que o usuário pode confirmar os dados daquele \textit{workflow} e submetê-lo à execução, ou pode apenas realizar o \textit{download} do arquivo \textbf{\textit{.flow}} (representação do objeto Java contendo os dados de um \textit{workflow}). De posse deste arquivo, o usuário pode importá-lo em outro momento para, por exemplo, finalizá-lo, ou também pode compartilhar este arquivo com outros usuários do sistema, para que outros tenham acesso ao seu trabalho.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_final_workflow.png}
-	\caption{Tela final da composição do \textit{workflow}.}
-	\label{fig:tela_final_workflow}
-\end{figure}
-
-\noindent
-\textbf{Tela de \textit{status} do \textit{workflow}} \\
-
-\noindent
-A partir do momento que o usuário escolheu submeter o \textit{workflow} à plataforma BioNimbuZ, ele pode visualizar o estado de sua execução na tela de \textit{status}, apresentada na Figura \ref{tela_status_workflow}. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_status_workflow.png}
-	\caption{Tela final da composição do \textit{workflow}.}
-	\label{fig:tela_status_workflow}
-\end{figure}
-
-Os possíveis estados de um \textit{workflow} estão retratados na Tabela \ref{tab:tabela_status_workflow}.
-
-
-\begin{table}[H]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{||c|c|c||}
-\hline
-\large{\textbf{\textit{Status}}} & \large{\textbf{Nível}} & \large{\textbf{Descrição}} \\
-\hline
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{7F8C8D} \textbf{\textit{Workflow} Pausado}}}                & \multicolumn{1}{l|}{\texttt{Informativo}} & \multicolumn{1}{l||}{Foi requisitada a pausa na execução do \textit{Workflow}.}               \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{2980B9} \textbf{\textit{Workflow} Pendente}}}               & \multicolumn{1}{l|}{\texttt{Informativo}} & \multicolumn{1}{l||}{Seu \textit{Workflow} está agurdando execução pelo BioNimbuZ.}           \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{2980B9} \textbf{\textit{Workflow} em Execução}}}            & \multicolumn{1}{l|}{\texttt{Informativo}} & \multicolumn{1}{l||}{O \textit{Workflow} está em plena execução.}                             \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{27AE60} \textbf{\textit{Workflow} Finalizado com Sucesso}}} & \multicolumn{1}{l|}{\texttt{Informativo}} & \multicolumn{1}{l||}{Seu \textit{Workflow} foi finalizado sem alertas e sem erros.}           \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{F39C12} \textbf{\textit{Workflow} Finalizado com Alertas}}} & \multicolumn{1}{l|}{\texttt{Alerta}}      & \multicolumn{1}{l||}{Alertas foram lançados durante a execução deste \textit{Workflow}.}      \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{C0392B} \textbf{\textit{Workflow} Finalizado com Erros}}}   & \multicolumn{1}{l|}{\texttt{Erro}}        & \multicolumn{1}{l||}{Erros nao permitiram que este \textit{Workflow} terminasse com sucesso.} \\ 
-\hline
-\multicolumn{1}{||l|}{{\color[HTML]{C0392B} \textbf{\textit{Workflow} Parado com Erros}}}       & \multicolumn{1}{l|}{\texttt{Erro}}        & \multicolumn{1}{l||}{Estado parcial com erros.}                                      \\
-\hline
-\end{tabular}
-}
-\caption{Estados possíveis de um \textit{Workflow}}
-\label{tab:tabela_status_workflow}
-\end{table}
-
-
-\noindent
-\textbf{Telas de \textit{upload} de arquivos e armazenamento} \\
-
-\noindent
-À fim de se compôr um \textit{workflow}, o usuário tem duas formas de lhe prover dados de entrada: utilizando uma \textit{URL} para passar o caminho de rede de onde se encontra o arquivo, para que dessa forma o núcleo do BioNimbuZ possa realizar o \textit{download} do mesmo, ou enviar arquivos para a plataforma do BioNimbuZ, a partir da tela mostrada na Figura \ref{fig:tela_upload}. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265 ]{tela_upload.png}
-	\caption{Tela utilizada para realizar o \textit{upload} de arquivos.}
-	\label{fig:tela_upload}
-\end{figure}
-
-Nesta implementação, foi definido um armazenamento máximo de 256 \textit{Megabytes} por usuário. Foi desenvolvida uma interface para que usuários possam ter controle de seu armazenamento, apresentada na Figura \ref{fig:tela_armazenamento}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.265]{tela_armazenamento.png}
-	\caption{Nesta tela usuários controlam seu armazenamento e verificam sua porcentagem.}
-	\label{fig:tela_armazenamento}
-\end{figure}
-
-Desta forma, as telas apresentadas compõem a camada de visualização do Modelo \textit{MVC}. A Seção 
+Isso significa que, utilizando o \textit{Primefaces}, não é necessário desenvolver os códigos de estilo \textit{CSS} \cite{css_rfc} (\textit{Cascading Style Sheets} - especificação que define como os elementos que compõem uma página, um documento ou aplicação \textit{web} serão exibidos). Também não é necessário desenvolver código \textit{JavaScript} \cite{js_rfc} (linguagem de programação baseada em \textit{scripts}, utilizada na parte cliente de páginas \textit{web}, isto é, código executado no navegador do usuário), descrevendo a interação entre os elementos visuais. Essas duas características do \textit{Primefaces} facilitam o desenvolvimento de páginas \textit{web} interativas e dinâmicas. 
 
 A Seção \ref{cap5sec3subsec2} trata da Camada de Controle, a qual também compõe o Modelo \textit{MVC}.
 
-\subsection{Camada de Controle} \label{cap5sec3subsec2}
+\subsection{Camada de Controle} \label{cap5sec4subsec3}
 
 Conforme o que foi exposto previamente, a camada de controle tem a responsabilidade de interpretar os dados enviados pelo usuário, a partir da camada de visualização (que neste projeto foi desenvolvida a partir de páginas \textit{HTML}), sinalizando ao sistema o que aqueles comandos representam.
 
@@ -292,19 +128,19 @@ Assim, foram desenvolvidas classes Java controladoras para tratar as requisiçõ
 \textbf{Classe Java} & \textbf{Página relacionada}  \\
 \hline
 \hline
-\multicolumn{1}{||l|}{\code{SessionBean}}				& \multicolumn{1}{l||}{Página de \textit{login}} \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{SessionBean}}}				& \multicolumn{1}{l||}{Página de \textit{login}} \\ 
 \hline
-\multicolumn{1}{||l|}{\code{SignUpBean}}				& \multicolumn{1}{l||}{Página de cadastro de novos usuários} \\
+\multicolumn{1}{||l|}{\textbf{\texttt{SignUpBean}}}				& \multicolumn{1}{l||}{Página de cadastro de novos usuários} \\
 \hline
-\multicolumn{1}{||l|}{\code{FileUploadBean}}			& \multicolumn{1}{l||}{Página relativa à \textit{upload} de arquivos} \\  
+\multicolumn{1}{||l|}{\textbf{\texttt{FileUploadBean}}}			& \multicolumn{1}{l||}{Página relativa à \textit{upload} de arquivos} \\  
 \hline
-\multicolumn{1}{||l|}{\code{DeleteFileBean}} 			& \multicolumn{1}{l||}{Página de deleção de arquivos do usuário} \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{DeleteFileBean}}} 			& \multicolumn{1}{l||}{Página de deleção de arquivos do usuário} \\ 
 \hline
-\multicolumn{1}{||l|}{\code{WorkflowComposerBean}} 	& \multicolumn{1}{l||}{Página de composição, \textit{design} e submissão de \textit{workflows}}      \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowComposerBean}}} 	& \multicolumn{1}{l||}{Página de composição, \textit{design} e submissão de \textit{workflows}}      \\ 
 \hline
-\multicolumn{1}{||l|}{\code{WorkflowStatusBean}}		& \multicolumn{1}{l||}{Página para visualização do \textit{status} dos \textit{workflows} gerenciados pelo usuário}        \\ 
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowStatusBean}}}		& \multicolumn{1}{l||}{Página para visualização do \textit{status} dos \textit{workflows} gerenciados pelo usuário}        \\ 
 \hline
-\multicolumn{1}{||l|}{\code{WorkflowHistoryBean}}		& \multicolumn{1}{l||}{Contém o histórico de execução de um determinado \textit{workflow}}        \\
+\multicolumn{1}{||l|}{\textbf{\texttt{WorkflowHistoryBean}}}		& \multicolumn{1}{l||}{Contém o histórico de execução de um determinado \textit{workflow}}        \\
 \hline
 \end{tabular}
 }
@@ -335,22 +171,69 @@ Dessa forma, essas classes realizam a função de controle do modelo \textit{MVC
 
 % \subsection{Fluxos das Ações} \label{cap5sec3subsec2}
 
-\section{Camada de Comunicação} \label{cap5sec4}
+\section{Camada de Comunicação} \label{cap5sec5}
 
-Um dos requisitos da solução proposta era que os componentes de software compostos pela aplicação \textit{web} e pelo núcleo do BioNimbuZ fossem desenvolvidos de maneira distinta. Dessa forma, surgiu o problema de comunicação entre esses dois elementos.
+Um dos requisitos da solução proposta era que os componentes de software compostos pela aplicação \textit{web} e pelo núcleo do BioNimbuZ fossem desenvolvidos de maneira separada. Com isso, surgiu o problema de comunicação entre esses dois elementos.
 
-Nesse contexto, a solução desenvolvida tem como base a comunicação utilizando-se \textit{webservices REST}(\textit{\textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer}). \textit{REST} é definido como ''\textit{estilo de arquitetura para sistemas de hipermídia distribuídos, descrevendo os princípios de engenharia de software que guiam o  e as restrições de interação escolhidos para manter esses princípios, enquanto contrastando-as com as restrições de outros estilos arquiteturais.}'' \cite{rest}. Voltado para sistema baseados na Internet, tem sido amplamente utilizado na integração de sistemas, pois utiliza operações definidas no protocolo \textit{HTTP} (tais como \textit{PUT}, \textit{GET} e \textit{DELETE}). Assim, softwares que ''entendam'' o protocolo \textit{HTTP}, podem utilizar, geralmente, soluções baseadas em \textit{REST}.
+Nesse contexto, a solução desenvolvida tem como base a comunicação utilizando-se \textit{webservices REST}(\textit{\textbf{RE}presentational \textbf{S}tate \textbf{T}ransfer}). \textit{REST} é definido como ''\textit{estilo de arquitetura para sistemas de hipermídia distribuídos, descrevendo os princípios de engenharia de software que guiam o e as restrições de interação escolhidos para manter esses princípios, enquanto contrastando-as com as restrições de outros estilos arquiteturais.}'' \cite{rest}. Voltado para sistema baseados na Internet, tem sido amplamente utilizado na integração de sistemas, pois utiliza operações definidas no protocolo \textit{HTTP} (tais como \textit{PUT}, \textit{GET} e \textit{DELETE}). Assim, softwares que ''entendam'' o protocolo \textit{HTTP}, podem utilizar, geralmente, soluções baseadas em \textit{REST}.
 
-Dessa forma, para possibilitar a troca de mensagens entre a aplicação \textit{web} e o núcleo do BioNimbuZ, foi necessário o desenvolvimento de três entidades principais: \textbf{Requisições} (\textit{requests}), \textbf{Respostas} (\textit{responses}) e \textbf{Ações} (\textit{actions}), com as seguintes responsabilidades:
+Dessa forma, para possibilitar a troca de mensagens entre a aplicação \textit{web} e o núcleo do BioNimbuZ, foi necessário o desenvolvimento de três entidades principais: \textbf{Requisições} (\textit{requests}), \textbf{Respostas} (\textit{responses}) e \textbf{Ações} (\textit{actions}). Estas foram implementadas como \texttt{interface} Java, à fim de manter o código o mais genérico possível. Suas responsabilidades são as que seguem:
 
 \begin{itemize}
 	\item \textbf{Ações:} Definem o comando à ser executado pelo núcleo, enviando-lhe uma requisição, à fim de se obter uma resposta com os dados requeridos;
 	\item \textbf{Requisições:} De acordo com \cite{rest}, toda requisição feita à um servidor deve conter todo o conjunto de informações necessárias para sua completude, pois a comunicação não deve manter estado (\textit{stateless}). Assim, foram desenvolvidas requisições que contivéssem todos os dados necessários para a execução daquela Ação requisitada pela aplicação \textit{web};
-	\item \textbf{Respostas:} Define a resposta dada pelo núcleo do BioNimbuZ para uma dada ação. É verificada o código \textit{HTTP} de resposta (\textit{status code}), esperando-se, geralmente, o código \texttt{HTTP 200}, que indica sucesso na requisição. Outros código são comuns, tais como o código \texttt{HTTP 500}, sinalizando erro interno do servidor e \texttt{HTTP 400}, que significa que uma requisição foi mal montada (\textit{Bad Request}).
+	\item \textbf{Respostas:} Definem a mensagem devolvida pelo núcleo do BioNimbuZ para uma dada ação. É verificada o código \textit{HTTP} de resposta (\textit{status code}), esperando-se, geralmente, o código \texttt{HTTP 200}, que indica sucesso na requisição. Outros código são comuns, tais como o código \texttt{HTTP 500}, sinalizando erro interno do servidor e \texttt{HTTP 400}, que significa que uma requisição foi mal montada (\textit{Bad Request}).
+\end{itemize} 
+
+Para permitir a execução de uma determinada \textit{Action}, e seus respectivos \textit{Requests} e \textit{Responses}, foram desenvolvidas duas classes Java para controlar seu fluxo, executando uma ação, enviando sua respectiva requisição e aguardando uma resposta. As responsabilidades dessas classes, chamadas \texttt{RestService} e \texttt{RestCommunicator}, estão listadas abaixo:
+
+\begin{itemize}
+	\item \textbf{\texttt{RestService}:} Contém a lista de métodos disponíveis na Camada de Comunicação. Outros componentes de software só podem requisitar um comando \textit{REST} a partir da instanciação desta classe e caso o respectivo método ter sido previamente implementado.
+	\item \textbf{\texttt{RestCommunicator}:} É responsável por prover um passo a passo a ser seguido para realização da comunicação via \textit{REST} da classe \texttt{RestService}. Utilizando o padrão de projeto \textit{Strategy} \cite{head_first_book} em conjunto com o conceito de polimorfismo, executa os seguinte métodos definido na interface \textit{Action}:
+	\begin{enumerate}
+		\item \textbf{\texttt{ping()}:} Verifica o estado do núcleo do BioNimbuZ antes de toda requisição, efetuando o comando \textit{ping} \cite{ping_rfc}, podendo retornar verdadeiro (\texttt{\textit{true}}) ou falso (\texttt{\textit{true}}). Em caso negativo, a requisição falha e retorna uma mensagem de erro ao usuário com a mensagem ''\textit{Erro Interno do Servidor}'', sinalizando a falha na comunicação com o núcleo;
+		\item \textbf{\texttt{setup()}:} Realiza a configuração prévia do objeto à ser enviado ao núcleo do BioNimbuZ, suprindo necessidades da comunicação via \textit{REST}, tais como: instanciação do cliente \textit{REST}, \textit{set} das informações necessárias para a requisição, etc;
+		\item \textbf{\texttt{prepareTarget()}:} Configura o endereço alvo (\textit{target}) daquela requisição. Aponta para uma \textit{URL} contendo o endereço IP do núcleo juntamente com o caminho do recuro \textit{REST} \cite{rest} que irá recepcionar a requisição setada;
+		\item \textbf{\texttt{execute()}:} Executa a Ação desejada, realizando a operação \textit{REST} definida pela requisição (\textit{GET}, \textit{POST}, \textit{DELETE}, etc), retornando uma resposta para as classes de controle.
+	\end{enumerate}
 \end{itemize}
 
+A partir destas classes, foram desenvolvidas as implementações das \texttt{interfaces} \texttt{Action}, \texttt{ResponseInfo} e \texttt{RequestInfo}. A Tabela \ref{tab:classes_java_rest} apresenta a responsabilidade de cada relação de classes \texttt{Action} x \texttt{ResponseInfo} x \texttt{RequestInfo}.
 
-\section{Alterações realizadas no Núcleo do BioNimbuZ} \label{cap5sec5}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{||c|c|c||}
+\hline
+\textbf{\textit{Action}} & \textbf{\textit{ResponseInfo}} & \textbf{\textit{RequestInfo}} \\
+\hline
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{DeleteFile}}} & \multicolumn{1}{l|}{\texttt{DeleteFileResponse}} & \multicolumn{1}{l|}{\texttt{DeleteFileRequest
+}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{GetWorkflowHistory}}} & \multicolumn{1}{l|}{\texttt{GetWorkflowHistoryResponse}} & \multicolumn{1}{l|}{\texttt{GetWorkflowHistoryRequest}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{GetWorkflowStatus}}} & \multicolumn{1}{l|}{\texttt{GetWorkflowStatusResponse}} & \multicolumn{1}{l|}{\texttt{GetWorkflowStatusRequest}} \\ 
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{Login}}} & \multicolumn{1}{l|}{\texttt{LoginResponse}} & \multicolumn{1}{l|}{\texttt{LoginRequest}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{Logout}}} & \multicolumn{1}{l|}{\texttt{LogoutResponse}} & \multicolumn{1}{l|}{\texttt{LogoutRequest}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{SignUp}}} & \multicolumn{1}{l|}{\texttt{SignUpResponse}} & \multicolumn{1}{l|}{\texttt{SignUpRequest}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{StartWorkflow}}} & \multicolumn{1}{l|}{\texttt{StartWorkflowResponse}} & \multicolumn{1}{l|}{\texttt{StartWorkflowRequest}} \\
+\hline
+\multicolumn{1}{||l|}{\textbf{\texttt{Upload}}} & \multicolumn{1}{l|}{\texttt{UploadResponse}} & \multicolumn{1}{l|}{\texttt{UploadRequest}} \\
+\hline
+\end{tabular}
+}
+\caption{Relação entre classes Java e páginas \textit{HTML}.}
+\label{tab:classes_java_rest}
+\end{table}
+
+
+\section{Alterações realizadas no Núcleo do BioNimbuZ} \label{cap5sec6}
     
 Compreende os serviços providos atualmente pelo BioNimbuz (como serviço de armazenamento, escalonamento, descobrimento) acrescido do código necessário para executar os comandos e requisições vindos da parte Cliente. Também deverá implementar métodos de acesso à bancos de dados relacionais, pois deverá persistir os dados trocados entre a aplicação Cliente e o Servidor do BioNimbuZ (entidades como Usuário, Workflow e Arquivo).
 

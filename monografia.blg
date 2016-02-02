@@ -6,45 +6,45 @@ Database file #1: bibliografia.bib
 Warning--I didn't find a database entry for "design_patterns"
 Warning--to sort, need author or key in html_rfc
 Warning--to sort, need author or key in primefaces_url
-You've used 12 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            564 strings with 6334 characters,
-and the built_in function-call counts, 3800 in all, are:
-= -- 357
-> -- 188
+            593 strings with 7114 characters,
+and the built_in function-call counts, 4867 in all, are:
+= -- 462
+> -- 249
 < -- 4
-+ -- 76
-- -- 64
-* -- 238
-:= -- 614
-add.period$ -- 40
-call.type$ -- 12
-change.case$ -- 68
++ -- 100
+- -- 84
+* -- 303
+:= -- 804
+add.period$ -- 53
+call.type$ -- 16
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 134
-empty$ -- 316
-format.name$ -- 64
-if$ -- 816
+cite$ -- 18
+duplicate$ -- 169
+empty$ -- 396
+format.name$ -- 84
+if$ -- 1035
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 5
-newline$ -- 67
-num.names$ -- 20
-pop$ -- 110
+int.to.str$ -- 16
+missing$ -- 7
+newline$ -- 87
+num.names$ -- 28
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 74
 quote$ -- 0
-skip$ -- 97
+skip$ -- 124
 stack$ -- 0
-substring$ -- 165
-swap$ -- 34
+substring$ -- 189
+swap$ -- 38
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 62
 warning$ -- 2
-while$ -- 30
-width$ -- 14
-write$ -- 130
+while$ -- 39
+width$ -- 18
+write$ -- 174
 (There were 3 warnings)

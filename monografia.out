@@ -34,12 +34,14 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{Camada de Infraestrutura}{section.4.2}% 34
 \BOOKMARK [0][-]{chapter.5}{Sistema Gerenciador de Workflows Cient\355ficos para o BioNimbuZ}{}% 35
 \BOOKMARK [1][-]{section.5.1}{Do terminal para a Interface Web}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.2}{Proposta de uma Nova Arquitetura}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.3}{Aplica\347\343o Web}{chapter.5}% 38
-\BOOKMARK [2][-]{subsection.5.3.1}{Camada de Visualiza\347\343o}{section.5.3}% 39
-\BOOKMARK [2][-]{subsection.5.3.2}{Camada de Controle}{section.5.3}% 40
-\BOOKMARK [1][-]{section.5.4}{Camada de Comunica\347\343o}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.5}{Altera\347\365es realizadas no N\372cleo do BioNimbuZ}{chapter.5}% 42
-\BOOKMARK [0][-]{chapter.6}{Resultados Obtidos}{}% 43
-\BOOKMARK [0][-]{chapter.7}{Conclus\365es e Trabalhos Futuros}{}% 44
-\BOOKMARK [0][-]{section*.8}{Refer\352ncias}{}% 45
+\BOOKMARK [1][-]{section.5.2}{Novos Requisitos}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.3}{Proposta de uma Nova Arquitetura}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.4}{Aplica\347\343o Web}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.4.1}{Camada de Modelo}{section.5.4}% 40
+\BOOKMARK [2][-]{subsection.5.4.2}{Camada de Visualiza\347\343o}{section.5.4}% 41
+\BOOKMARK [2][-]{subsection.5.4.3}{Camada de Controle}{section.5.4}% 42
+\BOOKMARK [1][-]{section.5.5}{Camada de Comunica\347\343o}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.6}{Altera\347\365es realizadas no N\372cleo do BioNimbuZ}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Resultados Obtidos}{}% 45
+\BOOKMARK [0][-]{chapter.7}{Conclus\365es e Trabalhos Futuros}{}% 46
+\BOOKMARK [0][-]{section*.8}{Refer\352ncias}{}% 47
