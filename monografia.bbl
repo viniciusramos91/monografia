@@ -85,6 +85,12 @@ S.~Majithia, M.~Shields, I.~Taylor, e I.~Wang.
 \newblock In {\em Web Services, 2004. Proceedings. IEEE International
   Conference on}, pages 514--521, July 2004.
 
+\bibitem{mysql_url}
+Oracle.
+\newblock Mysql.
+\newblock \url{www.mysql.com}.
+\newblock Acessado online em 02 de fevereiro de 2016.
+
 \bibitem{ping_rfc}
 J.~Quittek e K.~White.
 \newblock {Definitions of Managed Objects for Remote Ping, Traceroute, and
@@ -92,10 +98,28 @@ J.~Quittek e K.~White.
 \newblock RFC 4560 (Proposed Standard), June 2006.
 \newblock Acessado online em 01 de fevereiro de 2016.
 
+\bibitem{hibernate_url}
+JBoss RedHat.
+\newblock Hibernate.
+\newblock \url{http://hibernate.org/}.
+\newblock Acessado online em 02 de fevereiro de 2016.
+
+\bibitem{resteasy_url}
+JBoss RedHat.
+\newblock Resteasy.
+\newblock \url{http://resteasy.jboss.org}.
+\newblock Acessado online em 02 de fevereiro de 2016.
+
 \bibitem{taverna_screen}
 Taverna.
 \newblock Taverna online.
 \newblock \url{http://onlinehpc.com/}.
 \newblock Acessado online em 30 de janeiro de 2016.
+
+\bibitem{dao}
+Wikipedia.
+\newblock Data access object.
+\newblock \url{https://en.wikipedia.org/wiki/Data_access_object}.
+\newblock Acessado online em 02 de fevereiro de 2016.
 
 \end{thebibliography}

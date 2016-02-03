@@ -22,16 +22,17 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Terminal} do BioNimbuZ.}}{44}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Nova Arquitetura do BioNimbuZ.}}{47}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Modelo \textit {Model-View-Controller}.}}{49}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Fluxo de comunica\IeC {\c c}\IeC {\~a}o para opera\IeC {\c c}\IeC {\~o}es no banco de dados.}}{59}{figure.5.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{58}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Tela de cadastro de novos usu\IeC {\'a}rios.}}{59}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{59}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Tela inicial de cria\IeC {\c c}\IeC {\~a}o dos \textit {workflows}.}}{60}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Tela utilizada para selecionar elementos que ir\IeC {\~a}o comp\IeC {\^o}r o \textit {workflow}.}}{61}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Nesta tela o usu\IeC {\'a}rio comp\IeC {\~o}e o fluxo de seu \textit {workflow}.}}{62}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Nesta tela o usu\IeC {\'a}rio define par\IeC {\^a}metros de execu\IeC {\c c}\IeC {\~a}o de um elemento do \textit {workflow}.}}{63}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{64}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{64}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Tela utilizada para realizar o \textit {upload} de arquivos.}}{65}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Nesta tela usu\IeC {\'a}rios controlam seu armazenamento e verificam sua porcentagem.}}{66}{figure.6.11}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{60}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Tela de cadastro de novos usu\IeC {\'a}rios.}}{61}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Tela inicial da aplica\IeC {\c c}\IeC {\~a}o \textit {web}.}}{61}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Tela inicial de cria\IeC {\c c}\IeC {\~a}o dos \textit {workflows}.}}{62}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Tela utilizada para selecionar elementos que ir\IeC {\~a}o comp\IeC {\^o}r o \textit {workflow}.}}{63}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Nesta tela o usu\IeC {\'a}rio comp\IeC {\~o}e o fluxo de seu \textit {workflow}.}}{64}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Nesta tela o usu\IeC {\'a}rio define par\IeC {\^a}metros de execu\IeC {\c c}\IeC {\~a}o de um elemento do \textit {workflow}.}}{65}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{66}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Tela final da composi\IeC {\c c}\IeC {\~a}o do \textit {workflow}.}}{66}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Tela utilizada para realizar o \textit {upload} de arquivos.}}{67}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Nesta tela usu\IeC {\'a}rios controlam seu armazenamento e verificam sua porcentagem.}}{68}{figure.6.11}
 \addvspace {10\p@ }
