@@ -174,3 +174,26 @@ public class ApacheXZDescompactor implements Descompactor {
 		return out;
 	}
 }
+
+
+##############################################
+Alterações
+
+o 	Mudanças que estão no Overleaf:
+	- Dedicatória
+	- Agradecimentos
+	- Resumo
+	- Abstract
+	- Capítulo 1
+
+
+o 	Fazer o Diagrama de Casos de Uso
+
+Na visão do usuário, as funcionalidade presentes no BioNimbuZ podem ser descritas conforme mostrado no Diagrama de Casos de Uso da Figura \ref{fig:}. Um diagrama de casos de uso é muito útil para se apresentar o visão que o usuário tem do sistema, isto é, aquilo que ele pode esperar como funcionalidade do sistema. Seu objetivo é auxiliar a comunicação entre o analista do sistema, que é aquele que conhece dos detalhes internos do sistema, e o cliente, o qual espera algum ganho com a utilização deste sistema.
+
+o 	Fazer o mapa do site no Gliffy
+
+Uma representação gráfica do fluxo que pode ser seguido por um usuário ao acessar o sistema, chamada mapa de site, foi criado para guiar o desenvolvimento da interface gráfica, o qual pode ser visto na Figura \ref{fig:}. Ele foi utilizado como base para o desenvolvimento da camada de visualização, provendo um padrão de 
+
+o 	Fazer o mapeamento do Banco de Dados no MySQL Workbench
+
